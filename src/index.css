@@ -1,0 +1,72 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: math;
+  color: #333;
+  background-color: #ffffff;
+  /* Light beige tea theme */
+  line-height: 1.6;
+}
+
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #a56b2a;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #8b572a;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

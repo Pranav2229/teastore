@@ -1,0 +1,58 @@
+.img {
+    width: 100%;
+}
+
+.navigate {
+    margin-top: 20px;
+}
+
+.align {
+    margin: 0 52px;
+}
+
+.mainexpand {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 50px;
+}
+
+.mainexpand .teacollection {
+    flex: 1;
+}
+
+.mainexpand .teacollection select {
+    border: none;
+}
+
+.mainexpand .teacollection .sortby {
+    display: flex;
+    justify-content: end;
+}
+
+.mainexpand .teacollection .pos {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+}
+
+.mainexpand .teacollection .pricedetail {
+    font-family: auto;
+    text-align: center;
+}
+.mainexpand .itemalign {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.mainexpand ul li a {
+    color: black;
+}
+
+.mainexpand ul li {
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 11px;
+}

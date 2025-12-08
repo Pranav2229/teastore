@@ -1,0 +1,57 @@
+.aboutteamain{
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-around;
+}
+.aboutteamain h2{
+    font-size: 27px;
+    font-weight: 200;
+}
+.aboutteamain .alignitem{
+    padding: 20px 10px;
+}
+.aboutteamain a{
+    font-size: 13px;
+    margin-left: 13px;
+}
+.aboutteamain img{
+    padding: 0px 10px;
+}
+.aboutteamain .alignitem .manageborder{
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px 0px;
+}
+.displayflx{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.beforetas {
+    position: relative;
+    padding-right: 20px; /* Spacing for the line */
+  }
+  
+  .beforetas::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #d9d9d9;
+  }
+  
+  .beforetas:last-child::after {
+    display: none; /* Remove line from the last div */
+  }
+
+  .beforetas p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.Ingredient{
+    margin-top: 27px;
+}
