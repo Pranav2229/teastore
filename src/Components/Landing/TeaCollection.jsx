@@ -25,7 +25,7 @@ export function TeaCollection(props) {
 
     return (
         <>
-            <section className={styles.collection}>
+            {/* <section className={styles.collection}>
                 <h2>Our Tea Collection</h2>
                 <div className={styles.teaGrid}>
                     {teaCollection.map((tea) => (
@@ -35,8 +35,25 @@ export function TeaCollection(props) {
                         </div>
                     ))}
                 </div>
+            </section> */
+            <section className={styles.collection}>
+            <h2 className={styles.title}>Our Collections</h2>
+            <div className={styles.teaGrid}>
+                {teaCollection.map((tea) => (
+                    <div key={tea.id} className={styles.teaCard}>
+                    <div className={styles.imageWrapper}>
+                        <img src={tea.image} alt={tea.name} />
+                    </div>
+                        <h3>{tea.name}</h3>
+                    </div>
+                ))}
+            </div>
             </section>
-
+            }
         </>
     )
 }
+
+
+
+

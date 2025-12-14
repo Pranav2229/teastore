@@ -1,4 +1,4 @@
-.aboutteamain{
+/* .aboutteamain{
     background-color: #f7f7f7;
     display: flex;
     justify-content: space-around;
@@ -9,8 +9,8 @@
 }
 .aboutteamain .alignitem{
     padding: 20px 10px;
-}
-.aboutteamain a{
+} */
+/* .aboutteamain a{
     font-size: 13px;
     margin-left: 13px;
 }
@@ -24,15 +24,15 @@
 .displayflx{
     display: flex;
     justify-content: space-around;
-}
+} */
 
 
-.beforetas {
-    position: relative;
-    padding-right: 20px; /* Spacing for the line */
-  }
+ /* .beforetas {
+    position: relative; 
+    padding-right: 20px; Spacing for the line
+  } */
   
-  .beforetas::after {
+  /* .beforetas::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -41,17 +41,249 @@
     width: 2px;
     height: 100%;
     background-color: #d9d9d9;
-  }
+  } */
   
-  .beforetas:last-child::after {
-    display: none; /* Remove line from the last div */
-  }
+  /* .beforetas:last-child::after {
+    display: none; Remove line from the last div
+  } */
 
-  .beforetas p {
+  /* .beforetas p {
     font-size: 15px;
     text-align: center;
 }
 
 .Ingredient{
     margin-top: 27px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.aboutteamain {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between; /* left and right sections */
+    flex-wrap: wrap;
+    padding: 40px 60px 40px 80px; /* top right bottom left */
+    gap: 20px; /* reduced space between left and right sections */
+    box-sizing: border-box;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
+
+.aboutteamain h2 {
+    font-size: 32px; /* general heading size */
+    font-weight: 500;
+    margin-bottom: 15px; /* spacing below headings */
+}
+
+/* Specifically target About This Tea heading */
+.alignitem:last-child h2 {
+    font-size: 28px; /* slightly smaller than Steeping Instructions */
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.aboutteamain .alignitem {
+    padding: 10px 15px; /* smaller padding inside each section */
+    flex: 1 1 450px;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.alignitem:first-child {
+    text-align: left; /* Steeping instructions left aligned */
+}
+
+.alignitem:last-child {
+    text-align: left; /* About this tea left aligned */
+}
+
+/* Steeping instructions */
+.aboutteamain .alignitem .manageborder {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 5px 0px; /* minimal vertical padding */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 400px; /* line only below text */
+    margin-bottom: 10px; /* minimal spacing after the border */
+}
+
+.aboutteamain .alignitem .manageborder div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.aboutteamain .alignitem .manageborder img {
+    width: 30px; /* slightly smaller icons */
+    height: 30px;
+    object-fit: contain;
+}
+
+.aboutteamain a {
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+/* About Tea section */
+.displayflx {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 25px; /* spacing between flavor boxes */
+    margin-bottom: 20px; /* spacing below boxes */
+}
+
+.beforetas {
+    position: relative;
+    padding-right: 20px;
+    flex: 1 1 140px;
+    min-width: 140px;
+    text-align: center;
+}
+
+.beforetas::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+.beforetas:last-child::after {
+    display: none;
+}
+
+.beforetas span {
+    display: block;
+    font-size: 18px; /* label text size */
+    font-weight: 500;
+    margin-bottom: 6px; /* spacing below label */
+}
+
+.beforetas p {
+    font-size: 20px; /* value text size */
+    font-weight: 400;
+    margin: 0;
+}
+
+.Ingredient {
+    margin-top: 25px; /* reduced top spacing */
+    font-size: 26px; /* slightly smaller than About This Tea heading */
+    font-weight: 500;
+}
+
+.aboutteamain span {
+    display: block;
+    margin-top: 10px; /* spacing above ingredient text */
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .aboutteamain {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .alignitem {
+        flex: 1 1 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutteamain {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .displayflx {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .beforetas::after {
+        display: none; /* remove vertical line on mobile */
+    }
+
+    .alignitem {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutteamain h2 {
+        font-size: 26px;
+    }
+
+    .beforetas span {
+        font-size: 16px;
+    }
+
+    .beforetas p {
+        font-size: 18px;
+    }
+
+    .aboutteamain a {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .aboutteamain span {
+        font-size: 16px;
+    }
+
+    .alignitem {
+        padding: 10px 5px;
+    }
+}
+
