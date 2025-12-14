@@ -1,0 +1,504 @@
+/* .gerny {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.gerny span {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+
+
+.mybagbody img {
+    width: 30%;
+}
+
+.mybagbody li {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+}
+
+.mybagbody ul {
+    height: 325px;
+} */
+
+/* .mybagbody .martop {
+    margin-top: 15px;
+} */
+
+/* .mybagbody .martop2 {
+    margin-top: 30px;
+} */
+
+/* .mybagbody .bagdetail {
+    padding: 0px 25px;
+}
+
+.mybagbody li div:first-child {
+    justify-content: end;
+    display: flex;
+}
+ */
+
+
+/* .totalcount {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px
+}
+
+.totalcountmain {
+    border-top: 1px solid rgb(218, 218, 218);
+    border-bottom: 1px solid rgb(218, 218, 218);
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    background-color: white;
+} */
+
+/* .totalcountfinal {
+    border-top: 1px solid rgb(218, 218, 218); */
+    /* position: absolute; */
+    /* display: flex;
+    justify-content: space-around;
+    margin-top: 20px
+} */
+
+/* .purchasbtn {
+    text-align: center;
+    border: none;
+}
+
+.purchasbtn button {
+    border: 0;
+    border-color: #5a8dee !important;
+    background-color: #5a8dee !important;
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.alignmentsummary {
+    margin: 100px !important;
+    background-color: gray !important;
+    padding: 20px !important;
+}
+
+.detaildiliviry input {
+    border: 1px solid gray;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background: #fbfbfb;
+}
+.detaildiliviry select{
+    border: 1px solid gray;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background: #fbfbfb;
+}
+.detaildiliviry .inputfeilddata div {
+    padding: 10px;
+}
+
+.detaildiliviry .inputfeilddata {
+    padding: 0px 60px;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+/* =====================
+   PAGE CONTAINER
+===================== */
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 12px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+/* =====================
+   STEPS (FULL WIDTH ALIGNED WITH GRID)
+===================== */
+.gerny {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.gerny span {
+    white-space: nowrap;
+    text-align: left;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 20px;
+}
+
+/* =====================
+   MAIN GRID
+===================== */
+.layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* =====================
+   BAG LIST
+===================== */
+.mybagbody {
+    max-width: 100%;
+}
+
+.mybagbody ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bagItem {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    column-gap: 20px;
+    row-gap: 8px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+}
+
+.bagItem img {
+    width: 65px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =====================
+   PRODUCT INFO
+===================== */
+.bagdetail p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.remove {
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* =====================
+   QTY + PRICE
+===================== */
+.qtyPrice {
+    justify-self: end;
+    min-width: max-content;
+    text-align: right;
+}
+
+.qty {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 6px;
+}
+
+.qty button {
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* =====================
+   SUBTOTAL
+===================== */
+.subtotalRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 25px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 32px;
+    font-size: 20px;
+}
+
+/* =====================
+   BACK TO SHOPPING BUTTON
+===================== */
+.backBtn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.backBtn button {
+    background: none;
+    color: #000;
+    border: 2px solid #000;
+    padding: 14px 28px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 0;
+    cursor: pointer;
+    width: 70%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* =====================
+   RIGHT CARDS WRAPPER (VERTICAL ALIGNMENT)
+===================== */
+.summaryWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =====================
+   ORDER SUMMARY CARD
+===================== */
+.summary {
+    width: 100%;
+    max-width: 380px;
+    height: 400px;
+    min-height: 400px;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.summary h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 15px;
+    font-weight: 600;
+}
+
+/* Checkout button inside Order Summary */
+.checkoutBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: auto;
+    box-sizing: border-box;
+}
+
+/* =====================
+   PAYMENT CARD
+===================== */
+.paymentOptions {
+    width: 100%;
+    max-width: 380px;
+    height: 250px;
+    min-height: 250px;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    background-image: url('../../assets/Images/backgrd2.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.paymentOptions div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.paymentOptions select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1200px) {
+    .layout {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+    }
+
+    .summaryWrapper {
+        gap: 40px;
+    }
+
+    .summary,
+    .paymentOptions {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .summaryWrapper {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .summary,
+    .paymentOptions {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .summary {
+        margin-top: 20px;
+    }
+
+    .gerny {
+        font-size: 20px;
+        padding: 0 15px;
+    }
+
+    .mybagbody ul {
+        gap: 10px;
+    }
+
+    .bagItem {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .qtyPrice {
+        grid-column: span 2;
+        justify-self: start;
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .gerny {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 16px;
+        justify-content: flex-start;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .summary h3 {
+        font-size: 24px;
+    }
+
+    .backBtn button {
+        padding: 12px 24px;
+        font-size: 18px;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .paymentOptions {
+        gap: 10px;
+        padding: 15px;
+        height: auto;
+    }
+
+    .bagItem img {
+        width: 50px;
+    }
+
+    .qty,
+    .price,
+    .bagdetail p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,166 @@
+/* .whyUs {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url("../Images/whyus.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+
+/* .overlay { */
+  /* background: rgba(0, 0, 0, 0.5); Dark overlay for better readability */
+  /* color: white;
+  padding: 2rem;
+  border-radius: 10px;
+} */
+
+/* .whyUs h2 {
+  font-size: 25px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.whyUs p {
+  /* font-size: 1.4rem; */
+  /* color: ghostwhite; */
+  /* max-width: 471px;
+} */
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  .whyUs {
+    height: 300px;
+  }
+
+  h2 {
+    font-size: 2rem; */
+  /* }
+
+  p {
+    font-size: 1rem;
+  }
+} */ 
+
+
+
+
+
+/* -------------------- HERO SECTION -------------------- */
+
+.whyUs {
+  position: relative;
+  width: 100%;
+  height: 460px;
+
+  background: url("../Images/whyus.png") no-repeat center center/cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  overflow: hidden;
+}
+
+/* Soft gradient overlay for premium look */
+.overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.25)
+  );
+  padding: 45px 35px;
+
+  max-width: 650px;
+  width: 90%;
+
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.overlay h2 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+
+  text-transform: capitalize;
+}
+
+.overlay p {
+  font-size: 18px;
+  color: #e6e6e6;
+  line-height: 1.7;
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------- TABLETS -------------------- */
+@media (max-width: 1024px) {
+  .whyUs {
+    height: 400px;
+  }
+
+  .overlay h2 {
+    font-size: 36px;
+  }
+
+  .overlay p {
+    font-size: 17px;
+  }
+}
+
+
+/* -------------------- MOBILE -------------------- */
+@media (max-width: 768px) {
+  .whyUs {
+    height: 340px;
+  }
+
+  .overlay {
+    padding: 30px 22px;
+  }
+
+  .overlay h2 {
+    font-size: 28px;
+  }
+
+  .overlay p {
+    font-size: 15.5px;
+  }
+}
+
+
+/* -------------------- SMALL PHONES -------------------- */
+@media (max-width: 480px) {
+  .whyUs {
+    height: 300px;
+  }
+
+  .overlay {
+    padding: 22px 15px;
+  }
+
+  .overlay h2 {
+    font-size: 23px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
