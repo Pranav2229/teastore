@@ -119,212 +119,99 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from 'react';
-// import { useNavigate, useLocation } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import { Footer } from '../Footer/Footer';
-// import mybag from '../../assets/Styles/Mybag.module.css';
+// import styles from '../../assets/Styles/DeliveryDetail.module.css';
 
-// function DeliviryDeatil() {
-//     const navigate = useNavigate();
-//     const location = useLocation();
+// function DeliveryDetail() {
+//   const navigate = useNavigate();
 
-//     const product1 = location.state?.deliverydetail;
-//     console.log('product1', product1);
+//   return (
+//     <>
+//       <section className={styles.page}>
 
-//     const handlepayment = (reviewdeatil) => {
-//         navigate('/review_payment', { state: { reviewdeatil } });
-//     };
+//         {/* STEPS */}
+//         <div className={styles.steps}>
+//           <span>1. MY BAG</span>
+//           <div className={styles.stepLine}></div>
+//           <span className={styles.active}>2. DELIVERY</span>
+//           <div className={styles.stepLine}></div>
+//           <span>3. REVIEW & PAYMENT</span>
+//         </div>
 
-//     return (
-//         <section className={mybag.detaildiliviry}>
-//             {/* STEPS */}
-//             <div className={mybag.gerny}>
-//                 <span>1. My Bag</span>
-//                 <div className={mybag.line}></div>
-//                 <span>2. Delivery</span>
-//                 <div className={mybag.line}></div>
-//                 <span>3. Review & Payment</span>
+//         {/* MAIN CONTENT */}
+//         <div className={styles.layout}>
+
+//           {/* SHIPPING ADDRESS */}
+//           <div className={styles.column}>
+//             <h2 className={styles.heading}>Shipping Address</h2>
+
+//             <input className={`${styles.input} ${styles.inputLarge}`} placeholder="First Name" />
+//             <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Last Name" />
+//             <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Street and" />
+
+//             <div className={styles.row}>
+//               <input className={`${styles.input} ${styles.inputSmall}`} placeholder="PostCode" />
+//               <input className={`${styles.input} ${styles.inputMedium}`} placeholder="City" />
 //             </div>
 
-//             {/* MAIN LAYOUT */}
-//             <div className={mybag.layoutThreeCol}>
-//                 {/* LEFT – SHIPPING */}
-//                 <div className={mybag.mybagbody}>
-//                     <div className={mybag.inputfeilddata}>
-//                         <p className={mybag.sectionTitle}>Shipping Address</p>
+//             <select className={`${styles.input} ${styles.inputLarge}`}>
+//               <option>Country</option>
+//             </select>
+//           </div>
 
-//                         <input placeholder="First Name" />
-//                         <input placeholder="Last Name" />
-//                         <input placeholder="Street and" />
+//           {/* BILLING ADDRESS */}
+//           <div className={styles.column}>
+//             <h2 className={styles.heading}>Billing Address</h2>
+//             <p className={styles.muted}>(Same as shipping address)</p>
 
-//                         <div className={mybag.row}>
-//                             <input placeholder="PostCode" />
-//                             <input placeholder="City" />
-//                         </div>
+//             <label className={styles.checkbox}>
+//               <input type="checkbox" />
+//               <span>Bill to different address</span>
+//             </label>
 
-//                         <select>
-//                             <option>Country</option>
-//                         </select>
-//                     </div>
-//                 </div>
+//             <h2 className={styles.heading}>Contact information</h2>
+//             <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Email Address" />
+//           </div>
 
-//                 {/* MIDDLE – BILLING + CONTACT */}
-//                 <div className={mybag.middleBox}>
-//                     <p className={mybag.sectionTitle}>
-//                         Billing Address
-//                         <span>(Same as shipping address)</span>
-//                     </p>
+//           {/* ORDER SUMMARY */}
+//           <div className={styles.summary}>
+//             <h2 className={styles.summaryTitle}>Order summary</h2>
 
-//                     <label className={mybag.checkbox}>
-//                         <input type="checkbox" />
-//                         Bill to different address
-//                     </label>
-
-//                     <p className={mybag.sectionTitle}>Contact information</p>
-//                     <input placeholder="Email Address" />
-//                 </div>
-
-//                 {/* RIGHT – SUMMARY */}
-//                 <div className={mybag.summaryWrapper}>
-//                     <div className={mybag.summaryBox}>
-//                         <p className={mybag.summaryTitle}>Order Summary</p>
-
-//                         <div className={mybag.summaryRow}>
-//                             <span>Subtotal</span>
-//                             <span>€3.90</span>
-//                         </div>
-
-//                         <div className={mybag.summaryRow}>
-//                             <span>Delivery</span>
-//                             <span>€3.95</span>
-//                         </div>
-
-//                         <div className={mybag.summaryTotal}>
-//                             <span>Total</span>
-//                             <span>€7.85</span>
-//                         </div>
-
-//                         <p className={mybag.estimate}>
-//                             Estimated shipping time: 2 days
-//                         </p>
-
-//                         <button
-//                             className={mybag.payBtn}
-//                             onClick={() => handlepayment({ reviewdeatil: '1' })}
-//                         >
-//                             GO TO PAYMENT
-//                         </button>
-//                     </div>
-//                 </div>
+//             <div className={styles.summaryRow}>
+//               <span>Subtotal</span>
+//               <span>€3.90</span>
 //             </div>
 
-//             <Footer />
-//         </section>
-//     );
+//             <div className={styles.summaryRow}>
+//               <span>Delivery</span>
+//               <span>€3.95</span>
+//             </div>
+
+//             <div className={styles.divider}></div>
+
+//             <div className={styles.summaryRowTotal}>
+//               <span>Total</span>
+//               <span>€7.85</span>
+//             </div>
+
+//             <p className={styles.muted}>Estimated shipping time: 2 days</p>
+
+//             <button className={styles.payBtn} onClick={() => navigate('/review_payment')}>
+//               GO TO PAYMENT
+//             </button>
+//           </div>
+
+//         </div>
+
+//         <Footer />
+//       </section>
+//     </>
+//   );
 // }
 
-// export default DeliviryDeatil;
+// export default DeliveryDetail;
 
 
 
@@ -337,246 +224,112 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { useNavigate, useLocation } from 'react-router-dom';
-// import { Footer } from '../Footer/Footer';
-// import mybag from '../../assets/Styles/Mybag.module.css';
-
-// function DeliviryDeatil() {
-//     const navigate = useNavigate();
-//     const location = useLocation();
-
-//     const product1 = location.state?.deliverydetail;
-//     console.log('product1', product1);
-
-//     const handlepayment = (reviewdeatil) => {
-//         navigate('/review_payment', { state: { reviewdeatil } });
-//     };
-
-//     return (
-//         <section className={mybag.detaildiliviry}>
-//             {/* STEPS */}
-//             <div className={mybag.gerny}>
-//                 <span>1. My Bag</span>
-//                 <div className={mybag.line}></div>
-//                 <span>2. Delivery</span>
-//                 <div className={mybag.line}></div>
-//                 <span>3. Review & Payment</span>
-//             </div>
-
-//             {/* MAIN LAYOUT */}
-//             <div className={mybag.layoutThreeCol}>
-//                 {/* LEFT – SHIPPING */}
-//                 <div className={mybag.mybagbody}>
-//                     <div className={mybag.inputfeilddata}>
-//                         <p className={mybag.sectionTitle}>Shipping Address</p>
-
-//                         <input placeholder="First Name" />
-//                         <input placeholder="Last Name" />
-//                         <input placeholder="Street and" />
-
-//                         <div className={mybag.row}>
-//                             <input placeholder="PostCode" />
-//                             <input placeholder="City" />
-//                         </div>
-
-//                         <select>
-//                             <option>Country</option>
-//                         </select>
-//                     </div>
-//                 </div>
-
-//                 {/* MIDDLE – BILLING + CONTACT */}
-//                 <div className={mybag.middleBox}>
-//                     <p className={mybag.sectionTitle}>
-//                         Billing Address
-//                         <span>(Same as shipping address)</span>
-//                     </p>
-
-//                     {/* Checkbox aligned with top of Billing Address */}
-//                     <div className={mybag.checkboxContainer}>
-//                         <input type="checkbox" id="billDiff" />
-//                         <label htmlFor="billDiff">Bill to different address</label>
-//                     </div>
-
-//                     <p className={mybag.sectionTitle}>Contact information</p>
-//                     <input placeholder="Email Address" />
-//                 </div>
-
-//                 {/* RIGHT – SUMMARY */}
-//                 <div className={mybag.summaryWrapper}>
-//                     <div className={mybag.summaryBox}>
-//                         <p className={mybag.summaryTitle}>Order Summary</p>
-
-//                         <div className={mybag.summaryRow}>
-//                             <span>Subtotal</span>
-//                             <span>€3.90</span>
-//                         </div>
-
-//                         <div className={mybag.summaryRow}>
-//                             <span>Delivery</span>
-//                             <span>€3.95</span>
-//                         </div>
-
-//                         <div className={mybag.summaryTotal}>
-//                             <span>Total</span>
-//                             <span>€7.85</span>
-//                         </div>
-
-//                         <p className={mybag.estimate}>
-//                             Estimated shipping time: 2 days
-//                         </p>
-
-//                         <button
-//                             className={mybag.payBtn}
-//                             onClick={() => handlepayment({ reviewdeatil: '1' })}
-//                         >
-//                             GO TO PAYMENT
-//                         </button>
-//                     </div>
-//                 </div>
-//             </div>
-
-//             <Footer />
-//         </section>
-//     );
-// }
-
-// export default DeliviryDeatil;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Footer } from '../Footer/Footer';
-import mybag from '../../assets/Styles/Mybag.module.css';
+import styles from '../../assets/Styles/DeliveryDetail.module.css';
 
-function DeliviryDeatil() {
-    const navigate = useNavigate();
-    const location = useLocation();
+function DeliveryDetail() {
+  const navigate = useNavigate();
 
-    const product1 = location.state?.deliverydetail;
-    console.log('product1', product1);
+  // Step state: 1 = MY BAG, 2 = DELIVERY, 3 = REVIEW & PAYMENT
+  const [currentStep, setCurrentStep] = useState(2); // Delivery step is active
 
-    const handlePayment = (reviewDetail) => {
-        navigate('/review_payment', { state: { reviewDetail } });
-    };
+  const steps = [
+    { id: 1, label: 'MY BAG' },
+    { id: 2, label: 'DELIVERY' },
+    { id: 3, label: 'REVIEW & PAYMENT' },
+  ];
 
-    return (
-        <section className={`${mybag.detaildiliviry} deliveryPage`}>
-            {/* STEPS */}
-            <div className={mybag.gerny}>
-                <span>1. My Bag</span>
-                <div className={mybag.line}></div>
-                <span>2. Delivery</span>
-                <div className={mybag.line}></div>
-                <span>3. Review & Payment</span>
-            </div>
+  return (
+    <section className={styles.page}>
 
-            {/* MAIN LAYOUT */}
-            <div className={mybag.layoutThreeCol}>
-                {/* LEFT – SHIPPING */}
-                <div className={mybag.mybagbody}>
-                    <div className={mybag.inputfeilddata}>
-                        <p className={mybag.sectionTitle}>Shipping Address</p>
-                        <input placeholder="First Name" />
-                        <input placeholder="Last Name" />
-                        <input placeholder="Street and" />
-                        <div className={mybag.row}>
-                            <input placeholder="PostCode" />
-                            <input placeholder="City" />
-                        </div>
-                        <select>
-                            <option>Country</option>
-                        </select>
-                    </div>
-                </div>
+      {/* STEPS */}
+      <div className={styles.steps}>
+        {steps.map((step, index) => (
+          <React.Fragment key={step.id}>
+            <span className={currentStep === step.id ? styles.active : ''}>
+              {step.id}. {step.label}
+            </span>
+            {index < steps.length - 1 && (
+              <div
+                className={`${styles.stepLine} ${
+                  currentStep > step.id ? styles.activeLine : ''
+                }`}
+              ></div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
 
-                {/* MIDDLE – BILLING + CONTACT */}
-                <div className={mybag.middleBox}>
-                    <p className={mybag.sectionTitle}>
-                        Billing Address
-                        <span>(Same as shipping address)</span>
-                    </p>
+      {/* MAIN CONTENT GRID */}
+      <div className={styles.layout}>
 
-                    {/* Checkbox for different billing address */}
-                    <div className={mybag.checkboxContainer}>
-                        <input type="checkbox" id="billDiff" />
-                        <label htmlFor="billDiff">Bill to different address</label>
-                    </div>
+        {/* SHIPPING ADDRESS */}
+        <div className={styles.column}>
+          <h2 className={styles.heading}>Shipping Address</h2>
+          <input className={`${styles.input} ${styles.inputLarge}`} placeholder="First Name" />
+          <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Last Name" />
+          <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Street and" />
 
-                    <p className={mybag.sectionTitle}>Contact Information</p>
-                    <input placeholder="Email Address" />
-                </div>
+          <div className={styles.row}>
+            <input className={`${styles.input} ${styles.inputSmall}`} placeholder="PostCode" />
+            <input className={`${styles.input} ${styles.inputMedium}`} placeholder="City" />
+          </div>
 
-                {/* RIGHT – ORDER SUMMARY */}
-                <div className={mybag.summaryWrapper}>
-                    <div className={mybag.summaryBox}>
-                        <p className={mybag.summaryTitle}>Order Summary</p>
+          <select className={`${styles.input} ${styles.inputLarge}`}>
+            <option>Country</option>
+          </select>
+        </div>
 
-                        <div className={mybag.summaryRow}>
-                            <span>Subtotal</span>
-                            <span>€3.90</span>
-                        </div>
+        {/* BILLING ADDRESS */}
+        <div className={styles.column}>
+          <h2 className={styles.heading}>Billing Address</h2>
+          <p className={styles.muted}>(Same as shipping address)</p>
 
-                        <div className={mybag.summaryRow}>
-                            <span>Delivery</span>
-                            <span>€3.95</span>
-                        </div>
+          <label className={styles.checkbox}>
+            <input type="checkbox" />
+            <span>Bill to different address</span>
+          </label>
 
-                        <div className={mybag.summaryTotal}>
-                            <span>Total</span>
-                            <span>€7.85</span>
-                        </div>
+          <h2 className={styles.heading}>Contact Information</h2>
+          <input className={`${styles.input} ${styles.inputLarge}`} placeholder="Email Address" />
+        </div>
 
-                        <p className={mybag.estimate}>
-                            Estimated shipping time: 2 days
-                        </p>
+        {/* ORDER SUMMARY */}
+        <div className={styles.summary}>
+          <h2 className={styles.summaryTitle}>Order Summary</h2>
 
-                        <button
-                            className={mybag.payBtn}
-                            onClick={() => handlePayment({ reviewDetail: '1' })}
-                        >
-                            GO TO PAYMENT
-                        </button>
-                    </div>
-                </div>
-            </div>
+          <div className={styles.summaryRow}>
+            <span>Subtotal</span>
+            <span>€3.90</span>
+          </div>
 
-            <Footer />
-        </section>
-    );
+          <div className={styles.summaryRow}>
+            <span>Delivery</span>
+            <span>€3.95</span>
+          </div>
+
+          <div className={styles.divider}></div>
+
+          <div className={styles.summaryRowTotal}>
+            <span>Total</span>
+            <span>€7.85</span>
+          </div>
+
+          <p className={styles.muted}>Estimated shipping time: 2 days</p>
+
+          <button className={styles.payBtn} onClick={() => navigate('/review_payment')}>
+            GO TO PAYMENT
+          </button>
+        </div>
+
+      </div>
+
+      <Footer />
+    </section>
+  );
 }
 
-export default DeliviryDeatil;
+export default DeliveryDetail;
+
