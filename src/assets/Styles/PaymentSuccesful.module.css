@@ -1,0 +1,213 @@
+/* ================= PAGE WRAPPER ================= */
+
+.container {
+  min-height: 100vh;
+  padding: 60px 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* Soft white overlay for readability */
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111111;
+}
+
+.header p {
+  font-size: 16px;
+  color: #333333;
+  margin: 4px 0;
+}
+
+.header h4 {
+  margin-top: 22px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111111;
+}
+
+/* ================= GRID ================= */
+/* LEFT column gets more space (important for images) */
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+}
+
+/* ================= LEFT PRODUCTS ================= */
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each product row */
+.productItem {
+  display: grid;
+  grid-template-columns: 72px 1fr 70px;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Product image */
+.productItem img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #f2f2f2;
+}
+
+/* Product name */
+.productInfo span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #222222;
+}
+
+/* Product price */
+.price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  text-align: right;
+}
+
+/* ================= DELIVERY ================= */
+
+.delivery h3,
+.payment h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #111111;
+}
+
+.delivery h5 {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.delivery p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+/* ================= PAYMENT ================= */
+
+.payment p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.mt {
+  margin-top: 28px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary {
+  max-width: 420px;
+  margin: 60px auto 0 auto;
+  border-top: 1px solid #cccccc;
+  padding-top: 20px;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #222222;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #111111;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+  max-width: 420px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.primary {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 14px 0;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.outline {
+  background-color: transparent;
+  color: #111111;
+  padding: 14px 0;
+  font-size: 14px;
+  border: 1px solid #111111;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .productItem {
+    grid-template-columns: 64px 1fr auto;
+  }
+
+  .summary,
+  .buttons {
+    max-width: 100%;
+  }
+}
+
