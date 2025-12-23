@@ -1,65 +1,185 @@
+/* =========================
+   HEADER
+========================= */
 .header {
   width: 100%;
-  background: #ffffff;
-  padding: 1.5rem 2rem;
+  height: 104px;
+  background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 18px;
 }
 
+/* =========================
+   LOGO
+========================= */
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #6c4f3d;
-}
-
-.navList {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0; /* 🔒 prevents logo squishing */
 }
 
-.navList li a {
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: nowrap;
+}
+
+.nav a {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111111;
   text-decoration: none;
-  font-size: 1.2rem;
-  color: #333;
-  transition: color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-/* .navList a:hover {
-  color: #959595;
-} */
+/* =========================
+   ICONS
+========================= */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-shrink: 0; /* 🔒 prevents icon collapse */
+}
 
+.icons img {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  display: block;
+}
 
-/* Mobile Responsive */
+/* =========================
+   MOBILE MENU TOGGLE
+========================= */
 .menuToggle {
   display: none;
-  /* Hidden on desktop */
-  font-size: 2rem;
+  font-size: 30px;
   cursor: pointer;
+  user-select: none;
 }
 
-/* Show the menu toggle and hide nav items on smaller screens */
+/* =========================
+   LARGE DESKTOP SAFETY (≥1440px)
+========================= */
+@media (min-width: 1440px) {
+  .header {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================
+   LAPTOP / SMALL DESKTOP
+========================= */
+@media (max-width: 1200px) {
+  .nav {
+    gap: 48px; /* layout safety only */
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE
+========================= */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 48px;
+  }
+
+  .nav {
+    gap: 44px;
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT
+========================= */
+@media (max-width: 900px) {
+  .nav {
+    gap: 32px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
   .menuToggle {
     display: block;
-    /* Show the menu icon */
   }
 
-  .navList {
-    display: none;
-    /* Hide menu by default */
-    flex-direction: column;
+  .nav {
     position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+    top: 104px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 0;
+    display: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    z-index: 100;
   }
 
-  .navList.active {
+  .nav.active {
     display: flex;
-    /* Show menu when active */
+  }
+
+  .icons {
+    display: none;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤360×600)
+========================= */
+@media (max-width: 360px) {
+  .header {
+    padding: 0 16px;
+    height: 92px;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .nav a {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES (≤320px)
+========================= */
+@media (max-width: 320px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .nav {
+    gap: 24px;
   }
 }

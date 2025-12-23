@@ -171,52 +171,498 @@
 
 
 
+// import React from 'react';
+// import styles from '../../assets/Styles/PaymentSuccesful.module.css';
+// import { Footer } from '../Footer/Footer';
+// import { Maylikethis } from '../ProductDetails/UMaylikeThis/Maylikethis';
+// import backimg from '../../assets/Images/123.jpg';
+// import tea1 from '../../assets/Images/tea1.png'
+// import tea2 from '../../assets/Images/tea2.png'
+// import tea3 from '../../assets/Images/tea3.png'
+// import tea4 from '../../assets/Images/tea4.png'
+// import tea5 from '../../assets/Images/tea5.png'
+// import tea6 from '../../assets/Images/tea6.png'
+// import tea7 from '../../assets/Images/tea7.png'
+// import tea8 from '../../assets/Images/tea8.png'
+
+
+// function PaymentSuccesful() {
+
+// const Listoforder = [{
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea1
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea2
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea3
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea4
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea5
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea6
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea7
+// },
+// {
+//   "ordername" : "Ceylon Ginger Cinnamon",
+//   "Varity" : "chai tea- 50 g",
+//   "price" : "€4.85",
+//   "Image" : tea8
+// },
+// ]
+
+//   return (
+//     <>
+//       {/* THANK YOU PAGE */}
+//       <div
+//         className={styles.container}
+//         style={{ backgroundImage: `url(${backimg})` }}
+//       >
+
+//         {/* HEADER */}
+//         <div className={styles.header}>
+//           <h1>THANK YOU!</h1>
+//           <p>We received your order and will start preparing your package right away.</p>
+//           <p>You will receive a confirmation email in a moment.</p>
+//           <h4>ORDER DETAILS - 8972491047359</h4>
+//         </div>
+
+//         {/* MAIN GRID */}
+//         <div className={styles.grid}>
+
+//           {/* LEFT – PRODUCTS */}
+//           <div className={styles.products}>
+//             {Listoforder.map((item, index) => (
+//               <div key={item} className={styles.productItem}>
+//                 <img src={item.Image} alt="tea" />
+//                 <div className={styles.productInfo}>
+//                   <span>{item.ordername}</span>
+//                   <span>{item.Varity}</span>
+//                 </div>
+//                 <div className={styles.price}>{item.price}</div>
+//               </div>
+//             ))}
+//           </div>
+
+//           {/* MIDDLE – DELIVERY */}
+//           <div className={styles.delivery}>
+//             <h3>Delivery Details</h3>
+
+//             <h5>Shipping address</h5>
+//             <p>
+//               3 Falahi St, Falahi Ave,<br />
+//               Pasdaran Blvd, Fars Province,<br />
+//               Shiraz 71856-95159<br />
+//               Iran
+//             </p>
+
+//             <h5>Billing address</h5>
+//             <p>Same as shipping address</p>
+
+//             <h5>Contact information</h5>
+//             <p>amoopur@gmail.com</p>
+//           </div>
+
+//           {/* RIGHT – PAYMENT */}
+//           <div className={styles.payment}>
+//             <h3>Payment method</h3>
+//             <p>Master card</p>
+//             <p>XXXX XXXX XXXX 5425</p>
+
+//             <h3 className={styles.mt}>Estimated shipping</h3>
+//             <p>16 June 2024</p>
+//           </div>
+//         </div>
+
+//         {/* SUMMARY */}
+//         <div className={styles.summary}>
+//           <div>
+//             <span>Subtotal</span>
+//             <span>€3.90</span>
+//           </div>
+//           <div>
+//             <span>Delivery</span>
+//             <span>€3.95</span>
+//           </div>
+//           <div className={styles.total}>
+//             <span>Total</span>
+//             <span>€7.85</span>
+//           </div>
+//         </div>
+
+//         {/* BUTTONS */}
+//         <div className={styles.buttons}>
+//           <button className={styles.primary}>KEEP SHOPPING</button>
+//           <button className={styles.outline}>PRINT RECEIPT</button>
+//         </div>
+//       </div>
+
+//       {/* YOU MAY ALSO LIKE */}
+//       <Maylikethis />
+
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default PaymentSuccesful;
+
+
+
+
+
+
+// import React from 'react';
+// import styles from '../../assets/Styles/PaymentSuccesful.module.css';
+// import { Footer } from '../Footer/Footer';
+// import { Maylikethis } from '../ProductDetails/UMaylikeThis/Maylikethis';
+// import backimg from '../../assets/Images/123.jpg';
+
+// import tea1 from '../../assets/Images/tea1.png';
+// import tea2 from '../../assets/Images/tea2.png';
+// import tea3 from '../../assets/Images/tea3.png';
+// import tea4 from '../../assets/Images/tea4.png';
+// import tea5 from '../../assets/Images/tea5.png';
+// import tea6 from '../../assets/Images/tea6.png';
+// import tea7 from '../../assets/Images/tea7.png';
+// import tea8 from '../../assets/Images/tea8.png';
+
+// function PaymentSuccesful() {
+//   const Listoforder = [
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea1 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea2 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea3 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea4 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea5 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea6 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea7 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea8 },
+//   ];
+
+//   return (
+//     <>
+//       {/* HERO SECTION */}
+//       <div
+//         className={styles.heroSection}
+//         style={{ backgroundImage: `url(${backimg})` }}
+//       >
+//         <div className={styles.header}>
+//           <h1>THANK YOU!</h1>
+//           <p>We received your order and will start preparing your package right away.</p>
+//           <p>You will receive a confirmation email in a moment.</p>
+//           <h4>ORDER DETAILS - 8972491047359</h4>
+//         </div>
+//       </div>
+
+//       {/* MAIN CONTENT */}
+//       <div className={styles.container}>
+//         <div className={styles.grid}>
+//           {/* LEFT – PRODUCTS */}
+//           <div className={styles.products}>
+//             {Listoforder.map((item, index) => (
+//               <div key={index} className={styles.productItem}>
+//                 <img src={item.Image} alt="tea" />
+//                 <div className={styles.productInfo}>
+//                   <span>{item.ordername}</span>
+//                   <span>{item.Varity}</span>
+//                 </div>
+//                 <div className={styles.price}>{item.price}</div>
+//               </div>
+//             ))}
+//           </div>
+
+//           {/* MIDDLE – DELIVERY */}
+//           <div className={styles.delivery}>
+//             <h3>Delivery Details</h3>
+
+//             <h5>Shipping address</h5>
+//             <p>
+//               3 Falahi St, Falahi Ave,<br />
+//               Pasdaran Blvd, Fars Province,<br />
+//               Shiraz 71856-95159<br />
+//               Iran
+//             </p>
+
+//             <h5>Billing address</h5>
+//             <p>Same as shipping address</p>
+
+//             <h5>Contact information</h5>
+//             <p>amoopur@gmail.com</p>
+//           </div>
+
+//           {/* RIGHT – PAYMENT */}
+//           <div className={styles.payment}>
+//             <h3>Payment method</h3>
+//             <p>Master Card</p>
+//             <p>XXXX XXXX XXXX 5425</p>
+
+//             <h3 className={styles.mt}>Estimated shipping</h3>
+//             <p>16 June 2024</p>
+//           </div>
+//         </div>
+
+//         {/* SUMMARY */}
+//         <div className={styles.summary}>
+//           <div>
+//             <span>Subtotal</span>
+//             <span>€3.90</span>
+//           </div>
+//           <div>
+//             <span>Delivery</span>
+//             <span>€3.95</span>
+//           </div>
+//           <div className={styles.total}>
+//             <span>Total</span>
+//             <span>€7.85</span>
+//           </div>
+//         </div>
+
+//         {/* BUTTONS */}
+//         <div className={styles.buttons}>
+//           <button className={styles.primary}>KEEP SHOPPING</button>
+//           <button className={styles.outline}>PRINT RECEIPT</button>
+//         </div>
+//       </div>
+
+//       <Maylikethis />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default PaymentSuccesful;
+
+// import React from 'react';
+// import styles from '../../assets/Styles/PaymentSuccesful.module.css';
+// import { Footer } from '../Footer/Footer';
+// import { Maylikethis } from '../ProductDetails/UMaylikeThis/Maylikethis';
+// import backimg from '../../assets/Images/123.jpg';
+
+// import tea1 from '../../assets/Images/tea1.png';
+// import tea2 from '../../assets/Images/tea2.png';
+// import tea3 from '../../assets/Images/tea3.png';
+// import tea4 from '../../assets/Images/tea4.png';
+
+// function PaymentSuccesful() {
+
+//   const Listoforder = [
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea1 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea2 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea3 },
+//     { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea4 },
+//   ];
+
+//   return (
+//     <>
+//       {/* ===== HERO / ORDER DETAIL SECTION (BACKGROUND ONLY HERE) ===== */}
+//       <section
+//         className={styles.hero}
+//         style={{ backgroundImage: `url(${backimg})` }}
+//       >
+//         <div className={styles.heroOverlay}>
+//           <div className={styles.header}>
+//             <h1>THANK YOU!</h1>
+//             <p>We received your order and will start preparing your package right away.</p>
+//             <p>You will receive a confirmation email in a moment.</p>
+//             <h4>ORDER DETAILS - 8972491047359</h4>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ===== CONTENT SECTION (NO BACKGROUND) ===== */}
+//       <section className={styles.content}>
+//         <div className={styles.grid}>
+//           {/* LEFT */}
+//           <div className={styles.leftColumn}>
+//             <div className={styles.products}>
+//               {Listoforder.map((item, index) => (
+//                 <div key={index} className={styles.productItem}>
+//                   <img src={item.Image} alt="product" />
+//                   <div className={styles.productInfo}>
+//                     <span>{item.ordername}</span>
+//                     <span>{item.Varity}</span>
+//                   </div>
+//                   <div className={styles.price}>{item.price}</div>
+//                 </div>
+//               ))}
+//             </div>
+
+//             <div className={styles.summary}>
+//               <div>
+//                 <span>Subtotal</span>
+//                 <span>€19.40</span>
+//               </div>
+//               <div>
+//                 <span>Delivery</span>
+//                 <span>€3.95</span>
+//               </div>
+//               <div className={styles.total}>
+//                 <span>Total</span>
+//                 <span>€23.35</span>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* MIDDLE */}
+//           <div className={styles.delivery}>
+//             <h3>Delivery Details</h3>
+//             <h5>Shipping address</h5>
+//             <p>
+//               3 Falahi St, Falahi Ave,<br />
+//               Pasdaran Blvd, Fars Province,<br />
+//               Shiraz 71856-95159<br />
+//               Iran
+//             </p>
+
+//             <h5>Billing address</h5>
+//             <p>Same as shipping address</p>
+
+//             <h5>Contact information</h5>
+//             <p>amoopur@gmail.com</p>
+//           </div>
+
+//           {/* RIGHT */}
+//           <div className={styles.payment}>
+//             <h3>Payment method</h3>
+//             <p>Master Card</p>
+//             <p>XXXX XXXX XXXX 5425</p>
+
+//             <h3 className={styles.mt}>Estimated shipping</h3>
+//             <p>16 June 2024</p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* BUTTONS */}
+//       <div className={styles.buttons}>
+//         <button className={styles.primary}>KEEP SHOPPING</button>
+//         <button className={styles.outline}>PRINT RECEIPT</button>
+//       </div>
+
+//       <Maylikethis />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default PaymentSuccesful;
+
+
+
+
+
 import React from 'react';
 import styles from '../../assets/Styles/PaymentSuccesful.module.css';
 import { Footer } from '../Footer/Footer';
 import { Maylikethis } from '../ProductDetails/UMaylikeThis/Maylikethis';
 import backimg from '../../assets/Images/123.jpg';
 
-
+import tea1 from '../../assets/Images/tea1.png';
+import tea2 from '../../assets/Images/tea2.png';
+import tea3 from '../../assets/Images/tea3.png';
+import tea4 from '../../assets/Images/tea4.png';
+import tea5 from '../../assets/Images/tea5.png';
+import tea6 from '../../assets/Images/tea6.png';
+import tea7 from '../../assets/Images/tea7.png';
+import tea8 from '../../assets/Images/tea8.png';
 
 function PaymentSuccesful() {
+  const Listoforder = [
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea1 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea2 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea3 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea4 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea5 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea6 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea7 },
+    { ordername: 'Ceylon Ginger Cinnamon', Varity: 'chai tea - 50 g', price: '€4.85', Image: tea8 },
+  ];
+
   return (
     <>
-      {/* THANK YOU PAGE */}
-      <div
-        className={styles.container}
+      {/* HERO */}
+      <section
+        className={styles.hero}
         style={{ backgroundImage: `url(${backimg})` }}
       >
-
-        {/* HEADER */}
-        <div className={styles.header}>
-          <h1>THANK YOU!</h1>
-          <p>We received your order and will start preparing your package right away.</p>
-          <p>You will receive a confirmation email in a moment.</p>
-          <h4>ORDER DETAILS - 8972491047359</h4>
+        <div className={styles.heroOverlay}>
+          <div className={styles.header}>
+            <h1>THANK YOU!</h1>
+            <p>We received your order and will start preparing your package right away.</p>
+            <p>You will receive a confirmation email in a moment.</p>
+            <h4>ORDER DETAILS - 8972491047359</h4>
+          </div>
         </div>
+      </section>
 
-        {/* MAIN GRID */}
+      {/* CONTENT */}
+      <section className={styles.content}>
         <div className={styles.grid}>
 
-          {/* LEFT – PRODUCTS */}
-          <div className={styles.products}>
-            {[1, 2, 3].map((item) => (
-              <div key={item} className={styles.productItem}>
-                <img src="/tea.png" alt="tea" />
-                <div className={styles.productInfo}>
-                  <span>Ceylon Ginger Cinnamon</span>
-                  <span>chai tea - 50 g</span>
-                </div>
-                <div className={styles.price}>€3.90</div>
+          {/* LEFT */}
+          <div className={styles.leftColumn}>
+            {/* Scrollable product list */}
+            <div className={styles.productsWrapper}>
+              <div className={styles.products}>
+                {Listoforder.map((item, index) => (
+                  <div key={index} className={styles.productItem}>
+                    <img src={item.Image} alt="product" />
+                    <div className={styles.productInfo}>
+                      <span>{item.ordername}</span>
+                      <span>{item.Varity}</span>
+                    </div>
+                    <div className={styles.price}>{item.price}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className={styles.summary}>
+              <div>
+                <span>Subtotal</span>
+                <span>€14.55</span>
+              </div>
+              <div>
+                <span>Delivery</span>
+                <span>€3.95</span>
+              </div>
+              <div className={styles.total}>
+                <span>Total</span>
+                <span>€18.50</span>
+              </div>
+            </div>
           </div>
 
-          {/* MIDDLE – DELIVERY */}
+          {/* MIDDLE */}
           <div className={styles.delivery}>
             <h3>Delivery Details</h3>
-
             <h5>Shipping address</h5>
             <p>
               3 Falahi St, Falahi Ave,<br />
@@ -232,53 +678,29 @@ function PaymentSuccesful() {
             <p>amoopur@gmail.com</p>
           </div>
 
-          {/* RIGHT – PAYMENT */}
+          {/* RIGHT */}
           <div className={styles.payment}>
             <h3>Payment method</h3>
-            <p>Master card</p>
+            <p>Master Card</p>
             <p>XXXX XXXX XXXX 5425</p>
 
             <h3 className={styles.mt}>Estimated shipping</h3>
             <p>16 June 2024</p>
-          </div>
-        </div>
 
-        {/* SUMMARY */}
-        <div className={styles.summary}>
-          <div>
-            <span>Subtotal</span>
-            <span>€3.90</span>
+            {/* ✅ ACTION BUTTONS */}
+            <div className={styles.rightButtons}>
+              <button className={styles.primary}>KEEP SHOPPING</button>
+              <button className={styles.outline}>PRINT RECEIPT</button>
+            </div>
           </div>
-          <div>
-            <span>Delivery</span>
-            <span>€3.95</span>
-          </div>
-          <div className={styles.total}>
-            <span>Total</span>
-            <span>€7.85</span>
-          </div>
-        </div>
 
-        {/* BUTTONS */}
-        <div className={styles.buttons}>
-          <button className={styles.primary}>KEEP SHOPPING</button>
-          <button className={styles.outline}>PRINT RECEIPT</button>
         </div>
-      </div>
+      </section>
 
-      {/* YOU MAY ALSO LIKE */}
       <Maylikethis />
-
       <Footer />
     </>
   );
 }
 
 export default PaymentSuccesful;
-
-
-
-
-
-
-
