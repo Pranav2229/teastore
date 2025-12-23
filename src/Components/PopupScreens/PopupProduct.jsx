@@ -204,12 +204,117 @@ import tea3 from '../../assets/Images/tea3.png'
 // import '../../assets/Styles/Popup.css'
 // import tea3 from '../../assets/Images/tea3.png'
 
-export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
-    const navigate = useNavigate()
+// export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
+//     const navigate = useNavigate()
 
-    const handleProductClick = (mybag) => {
-        navigate("/mybag", { state: { mybag } })
-    }
+//     const handleProductClick = (mybag) => {
+//         navigate("/mybag", { state: { mybag } })
+//     }
+
+//     return (
+//         <>
+//             <div className={`sidebar ${OpenPopUp === true ? 'active' : ''}`}>
+//                 <div className="sd-header">
+//                     <h4>My Bag</h4>
+//                     <div className="close" onClick={() => setOpenPopUp(false)}>✕</div>
+//                 </div>
+
+//                 <div className="sd-body">
+//                     <ul className="cart-list">
+
+//                         {[1, 2, 3].map((item, index) => (
+//                             <li className="cart-item" key={index}>
+//                                 <img src={tea3} alt="product" />
+
+//                                 <div className="bagdetail">
+//                                     <p className="title">
+//                                         Ceylon Ginger Cinnamon<br />chai tea - 50 g
+//                                     </p>
+//                                     <span className="remove">REMOVE</span>
+//                                 </div>
+
+//                                 <div className="qty-price">
+//                                     <div className="qty">
+//                                         <span>-</span>
+//                                         <span>1</span>
+//                                         <span>+</span>
+//                                     </div>
+//                                     <div className="price">€3.90</div>
+//                                 </div>
+//                             </li>
+//                         ))}
+
+//                     </ul>
+//                 </div>
+
+//                 <div className="totalcountmain">
+//                     <div className="totalcount">
+//                         <span>Subtotal</span>
+//                         <span>€3.90</span>
+//                     </div>
+
+//                     <div className="totalcount">
+//                         <span>Delivery</span>
+//                         <span>€3.95</span>
+//                     </div>
+
+//                     <div className="totalcountfinal">
+//                         <strong>Total</strong>
+//                         <strong>€7.85</strong>
+//                     </div>
+
+//                     <div className="purchasbtn">
+//                         <button onClick={() => handleProductClick({ id: 1 })}>
+//                             Purchase
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             <div
+//                 className={`sidebar-overlay ${OpenPopUp === true ? 'active' : ''}`}
+//                 onClick={() => setOpenPopUp(false)}
+//             />
+//         </>
+//     )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import '../../assets/Styles/Popup.css';
+// import tea3 from '../../assets/Images/tea3.png';
+
+export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
+    const navigate = useNavigate();
+
+    // Define actual cart items here
+    const cartItems = [
+        { id: 1, name: "Ceylon Ginger Cinnamon chai tea - 50 g", qty: 1, price: 3.9 },
+        { id: 2, name: "Ceylon Ginger Lemon chai tea - 50 g", qty: 2, price: 4.5 },
+        { id: 3, name: "Ceylon Green Tea - 50 g", qty: 1, price: 3.0 },
+    ];
+
+    // Handle PURCHASE button click
+    const handleProductClick = () => {
+        // Optional: store in localStorage as fallback
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        navigate("/mybag", { state: { mybag: cartItems } });
+        setOpenPopUp(false); // Close popup after navigation
+    };
 
     return (
         <>
@@ -221,36 +326,32 @@ export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
 
                 <div className="sd-body">
                     <ul className="cart-list">
-
-                        {[1, 2, 3].map((item, index) => (
+                        {cartItems.map((item, index) => (
                             <li className="cart-item" key={index}>
                                 <img src={tea3} alt="product" />
 
                                 <div className="bagdetail">
-                                    <p className="title">
-                                        Ceylon Ginger Cinnamon<br />chai tea - 50 g
-                                    </p>
+                                    <p className="title">{item.name}</p>
                                     <span className="remove">REMOVE</span>
                                 </div>
 
                                 <div className="qty-price">
                                     <div className="qty">
                                         <span>-</span>
-                                        <span>1</span>
+                                        <span>{item.qty}</span>
                                         <span>+</span>
                                     </div>
-                                    <div className="price">€3.90</div>
+                                    <div className="price">€{item.price}</div>
                                 </div>
                             </li>
                         ))}
-
                     </ul>
                 </div>
 
                 <div className="totalcountmain">
                     <div className="totalcount">
                         <span>Subtotal</span>
-                        <span>€3.90</span>
+                        <span>€{cartItems.reduce((sum, i) => sum + i.price * i.qty, 0).toFixed(2)}</span>
                     </div>
 
                     <div className="totalcount">
@@ -260,11 +361,11 @@ export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
 
                     <div className="totalcountfinal">
                         <strong>Total</strong>
-                        <strong>€7.85</strong>
+                        <strong>€{(cartItems.reduce((sum, i) => sum + i.price * i.qty, 0) + 3.95).toFixed(2)}</strong>
                     </div>
 
                     <div className="purchasbtn">
-                        <button onClick={() => handleProductClick({ id: 1 })}>
+                        <button onClick={handleProductClick}>
                             Purchase
                         </button>
                     </div>
@@ -276,5 +377,6 @@ export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
                 onClick={() => setOpenPopUp(false)}
             />
         </>
-    )
+    );
 }
+
