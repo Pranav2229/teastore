@@ -64,6 +64,7 @@ import frame from "../../assets/Images/frame.png";
 import mall from "../../assets/Images/icons/local_mall.png";
 import search from "../../assets/Images/icons/search.png";
 
+
 export function Header() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);

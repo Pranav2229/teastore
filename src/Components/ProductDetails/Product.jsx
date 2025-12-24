@@ -151,36 +151,55 @@ export function Product(props) {
 
                     <div className={productcss.mainexpand}>
                         <div className={productcss.mainimg}>
-                            <img src={tea3} alt="tea-expand1" />
+                            {/* <img src={tea3} alt="tea-expand1" /> */}
+                            <img src={product.image} alt={product.title} />
+
                         </div>
 
                         <div className={productcss.productdetails}>
-                            <h1 className={productcss.head}>
+                            {/* <h1 className={productcss.head}>
                                 Ceylon Ginger Cinnamon
                                 <br />
                                 chai tea
+                            </h1> */}
+                            <h1 className={productcss.head}>
+                                {product.title}
                             </h1>
 
                             <span className={productcss.padtop}>
-                                A lovely warming Chai tea with ginger cinnamon flavours.
+                                {product.subtitle}
                             </span>
+
+
+                            {/* <span className={productcss.padtop}>
+                                A lovely warming Chai tea with ginger cinnamon flavours.
+                            </span> */}
+                            <span className={productcss.padtop}>
+                                {product.description}
+                            </span>
+
 
                             <div className={`${productcss.padtop} ${productcss.spanalin}`}>
                                 <span>
                                     <div><img src={langage} /></div>
-                                    <div>Origin: Iran</div>
+                                    {/* <div>Origin: Iran</div> */}
+                                    <div>Origin: {product.origin}</div>
                                 </span>
                                 <span>
                                     <div><img src={redeem} /></div>
-                                    <div>Organic</div>
+                                    {/* <div>Organic</div> */}
+                                    <div>{product.organic ? 'Organic' : 'Not Organic'}</div>
                                 </span>
                                 <span>
                                     <div><img src={eco} /></div>
-                                    <div>Vegan</div>
+                                    {/* <div>Vegan</div> */}
+                                    <div>{product.vegan ? 'Vegan' : 'Non-Vegan'}</div>
                                 </span>
                             </div>
 
-                            <h1 className={productcss.padtop}>€3.90</h1>
+                            {/* <h1 className={productcss.padtop}>€3.90</h1> */}
+                            <h1 className={productcss.padtop}>{product.price}</h1>
+
 
                             <div>
                                 <span style={{ fontSize: '20px' }}>Variants</span>
