@@ -3,15 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import expandcollection from '../../assets/Images/expandcollection.png'
 import { Footer } from '../Footer/Footer'
 import expandcss from '../../assets/Styles/Expandcollection.module.css'
-import expand1 from '../../assets/Images/expand1.png'
-import tea1 from '../../assets/Images/tea1.png'
-import tea2 from '../../assets/Images/tea2.png'
-import tea3 from '../../assets/Images/tea3.png'
-import tea4 from '../../assets/Images/tea4.png'
-import tea5 from '../../assets/Images/tea5.png'
-import tea6 from '../../assets/Images/tea6.png'
-import tea7 from '../../assets/Images/tea7.png'
-import tea8 from '../../assets/Images/tea8.png'
+import products from '../../data/products'
+
+// import expand1 from '../../assets/Images/expand1.png'
+// import tea1 from '../../assets/Images/tea1.png'
+// import tea2 from '../../assets/Images/tea2.png'
+// import tea3 from '../../assets/Images/tea3.png'
+// import tea4 from '../../assets/Images/tea4.png'
+// import tea5 from '../../assets/Images/tea5.png'
+// import tea6 from '../../assets/Images/tea6.png'
+// import tea7 from '../../assets/Images/tea7.png'
+// import tea8 from '../../assets/Images/tea8.png'
 // import tea9 from '../../assets/Images/tea9.png'
 
 // export function ExpandCollection(props) {
@@ -280,17 +282,17 @@ export function ExpandCollection() {
   const [filters, setFilters] = useState({ organicOnly: false })
   const [expandedFilters, setExpandedFilters] = useState({}) // For accordion
 
-  const products = [
-    { id: 1, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: expand1 },
-    { id: 2, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea1 },
-    { id: 3, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea2 },
-    { id: 4, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea3 },
-    { id: 5, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea4 },
-    { id: 6, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea5 },
-    { id: 7, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea6 },
-    { id: 8, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea7 },
-    { id: 9, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea8 },
-  ]
+  // const products = [
+  //   { id: 1, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: expand1 },
+  //   { id: 2, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea1 },
+  //   { id: 3, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea2 },
+  //   { id: 4, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea3 },
+  //   { id: 5, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea4 },
+  //   { id: 6, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea5 },
+  //   { id: 7, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea6 },
+  //   { id: 8, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea7 },
+  //   { id: 9, title: 'Ceylon Ginger', subtitle: 'Ceylon Ginger Cinnamon chai tea', price: '€4.85 / 50 g', img: tea8 },
+  // ]
 
   const handleProductClick = (product) => {
     navigate('/product', { state: { product } })
@@ -495,7 +497,9 @@ export function ExpandCollection() {
                   aria-label={`${product.title} - ${product.subtitle}`}
                 >
                   <div className={expandcss.imgWrap}>
-                    <img src={product.img} alt={product.title} className={expandcss.productImg} />
+                    {/* <img src={product.img} alt={product.title} className={expandcss.productImg} /> */}
+                    <img src={product.image} alt={product.title} className={expandcss.productImg} />
+
                   </div>
                   <div className={expandcss.pricedetail}>
                     <div className={expandcss.title}>{product.title}</div>

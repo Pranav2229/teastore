@@ -70,39 +70,86 @@
 
 
 
+// import { useState } from 'react'
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { NavigationPage } from './Components/Navigation/NavigationPage';
+// import { Landing } from './Components/Landing/Landing';
+// import { TeaCollection } from './Components/Landing/TeaCollection';
+// import { ExpandCollection } from './Components/ExpandCollection/ExpandCollection';
+// import { Header } from './Components/Header/Header';
+// import { Product } from './Components/ProductDetails/Product';
+// import { Mybag } from './Components/Mybag/Mybag';
+// import { MybagItem } from "./Components/MybagItem/Mybagitem"; 
+// import DeliviryDeatil from './Components/DeliveryDetail/DeliviryDeatil';
+// import ReviewandPayment from './Components/ReviewAndPayment/ReviewandPayment';
+// import PaymentSuccesful from './Components/PaymentSuccesful/PaymentSuccesful';
+
+// function App() {
+
+//   return (
+//     <>
+//       <Router>
+//         <Header />
+//         <Routes>
+//           <Route path="/" element={<Landing />} />
+//           <Route path="/teacollection" element={<ExpandCollection />} />
+//           <Route path="/product" element={<Product />} />     
+//           <Route path="/mybag" element={<Mybag />} />
+//           <Route path="/mybag-items" element={<MybagItem />} />
+//           <Route path="/deliverydetail" element={<DeliviryDeatil />} />
+//           <Route path="/review_payment" element={<ReviewandPayment />} />
+//           <Route path="/payment_succesful" element={<PaymentSuccesful />} />
+//         </Routes>
+//       </Router>
+//     </>
+//   )
+// }
+
+// export default App 
+
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { NavigationPage } from './Components/Navigation/NavigationPage';
-import { Landing } from './Components/Landing/Landing';
-import { TeaCollection } from './Components/Landing/TeaCollection';
-import { ExpandCollection } from './Components/ExpandCollection/ExpandCollection';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from './Components/Header/Header';
+import { Landing } from './Components/Landing/Landing';
+import { ExpandCollection } from './Components/ExpandCollection/ExpandCollection';
 import { Product } from './Components/ProductDetails/Product';
 import { Mybag } from './Components/Mybag/Mybag';
 import { MybagItem } from "./Components/MybagItem/Mybagitem"; 
 import DeliviryDeatil from './Components/DeliveryDetail/DeliviryDeatil';
 import ReviewandPayment from './Components/ReviewAndPayment/ReviewandPayment';
 import PaymentSuccesful from './Components/PaymentSuccesful/PaymentSuccesful';
+import { PopupProduct } from './Components/PopupScreens/PopupProduct';
 
 function App() {
+  const [openPopUp, setOpenPopUp] = useState(false)
 
   return (
-    <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/teacollection" element={<ExpandCollection />} />
-          <Route path="/product" element={<Product />} />     
-          <Route path="/mybag" element={<Mybag />} />
-          <Route path="/mybag-items" element={<MybagItem />} />
-          <Route path="/deliverydetail" element={<DeliviryDeatil />} />
-          <Route path="/review_payment" element={<ReviewandPayment />} />
-          <Route path="/payment_succesful" element={<PaymentSuccesful />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Header setOpenPopUp={setOpenPopUp} />
+
+      {/* ✅ GLOBAL POPUP */}
+      {openPopUp && (
+        <PopupProduct
+          OpenPopUp={openPopUp}
+          setOpenPopUp={setOpenPopUp}
+        />
+      )}
+
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/teacollection" element={<ExpandCollection />} />
+        <Route
+          path="/product"
+          element={<Product setOpenPopUp={setOpenPopUp} />}
+        />
+        <Route path="/mybag" element={<Mybag />} />
+        <Route path="/mybag-items" element={<MybagItem />} />
+        <Route path="/deliverydetail" element={<DeliviryDeatil />} />
+        <Route path="/review_payment" element={<ReviewandPayment />} />
+        <Route path="/payment_succesful" element={<PaymentSuccesful />} />
+      </Routes>
+    </Router>
   )
 }
 
-export default App 
+export default App
