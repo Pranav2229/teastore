@@ -198,7 +198,11 @@ export function Product(props) {
                             </div>
 
                             {/* <h1 className={productcss.padtop}>€3.90</h1> */}
-                            <h1 className={productcss.padtop}>{product.price}</h1>
+                            {/* <h1 className={productcss.padtop}>{product.price}</h1> */}
+                            <span className={`${productcss.padtop} ${productcss.price}`}>
+                                {product.price}
+                            </span>
+
 
 
                             <div>
@@ -213,11 +217,11 @@ export function Product(props) {
                                 </div>
                             </div>
 
-                            <div className={`${productcss.addbutton} ${productcss.padtop}`}>
-                                <div style={{ fontSize: '30px' }}>
-                                    <a style={{ padding: '0px 25px' }}>-</a>
-                                    1
-                                    <a style={{ padding: '0px 25px' }}>+</a>
+                            <div className={`${productcss.addbutton} ${productcss.padtop}`}>                             
+                                <div className={productcss.quantity}>
+                                    <a>-</a>
+                                    <span>1</span>
+                                    <a>+</a>
                                 </div>
 
                                 <div>

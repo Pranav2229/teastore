@@ -3,78 +3,82 @@
   background: #fff;
   font-family: Inter, sans-serif;
   color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 /* ================= STEPS ================= */
 .steps {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* first step left, last step right */
-  padding: 40px 80px;
-  font-size: 25px;
+  justify-content: space-between;
+  gap: clamp(6px, 2vw, 16px);
+  padding: clamp(12px, 4vw, 40px) clamp(12px, 5vw, 80px);
+  font-size: clamp(12px, 2.2vw, 25px);
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: clamp(16px, 5vw, 40px);
+
+  white-space: nowrap;   /* 🔥 FORCE SINGLE LINE */
+  overflow: hidden;
 }
 
 .steps span {
   position: relative;
-  z-index: 1; /* ensure step text is above line */
+  z-index: 1;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .active {
   font-weight: 600;
-  color: #2b2b2b; /* highlight active step */
+  color: #2b2b2b;
 }
 
-/* horizontal connecting lines */
+/* connecting lines */
 .stepLine {
-  flex-grow: 1;
+  flex: 1 1 auto;
   height: 2px;
-  background: #bdbdbd; /* inactive line color */
-  margin: 0 16px;
-  position: relative;
-  top: 0; 
+  background: #bdbdbd;
+  min-width: 12px;
 }
 
-/* completed line */
 .stepLine.activeLine {
-  background: #2b2b2b; /* completed step line color */
+  background: #2b2b2b;
 }
 
 /* ================= LAYOUT ================= */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr 460px;
-  gap: 72px;
-  padding: 0 80px 120px;
+  grid-template-columns: 1fr 1fr minmax(280px, 460px);
+  gap: clamp(16px, 5vw, 72px);
+  padding: 0 clamp(16px, 6vw, 80px) clamp(40px, 10vw, 120px);
 }
 
 /* ================= COLUMNS ================= */
 .column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(12px, 3vw, 20px);
 }
 
 /* ================= HEADINGS ================= */
 .heading {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 400;
   margin-bottom: 8px;
 }
 
 /* ================= TEXT ================= */
 .muted {
-  font-size: 15px;
+  font-size: clamp(12px, 1.5vw, 15px);
   color: #7a7a7a;
 }
 
 /* ================= INPUTS ================= */
 .input {
-  height: 56px;
+  min-height: 48px;
   border: 1px solid #bdbdbd;
   padding: 0 16px;
-  font-size: 15px;
+  font-size: clamp(13px, 1.8vw, 15px);
   background: #fff;
   width: 100%;
   box-sizing: border-box;
@@ -84,24 +88,17 @@
   color: #5f5f5f;
 }
 
-/* INPUT WIDTHS */
-.inputLarge {
-  max-width: 360px;
-}
-
-.inputMedium {
-  max-width: 204px; /* City */
-}
-
+.inputLarge,
+.inputMedium,
 .inputSmall {
-  max-width: 140px; /* Postcode */
+  max-width: 100%;
 }
 
-/* ROW CONTAINER FOR POSTCODE + CITY */
+/* postcode + city row */
 .row {
   display: flex;
   gap: 16px;
-  max-width: 360px;
+  width: 100%;
 }
 
 /* ================= CHECKBOX ================= */
@@ -109,7 +106,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: clamp(13px, 1.6vw, 15px);
   margin-bottom: 24px;
 }
 
@@ -119,45 +116,45 @@
 }
 
 .summaryTitle {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: clamp(20px, 5vw, 40px);
 }
 
-/* SUMMARY ROWS */
 .summaryRow {
   display: grid;
   grid-template-columns: 1fr auto;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 500;
-  gap: 20px; 
+  gap: clamp(10px, 3vw, 20px);
   margin-bottom: 24px;
 }
 
 .summaryRowTotal {
   display: grid;
   grid-template-columns: 1fr auto;
-  font-size: 20px;
+  font-size: clamp(16px, 2.2vw, 20px);
   font-weight: 600;
-  gap: 20px;
+  gap: clamp(10px, 3vw, 20px);
   margin-bottom: 16px;
 }
 
 .divider {
   height: 1px;
   background: #bdbdbd;
-  margin: 32px 0;
+  margin: clamp(16px, 4vw, 32px) 0;
 }
 
 /* ================= BUTTON ================= */
 .payBtn {
   width: 100%;
-  height: 56px;
+  min-height: 48px;
+  padding: 12px;
   background: #2b2b2b;
   color: #fff;
   border: none;
-  margin-top: 40px;
-  font-size: 15px;
+  margin-top: clamp(20px, 5vw, 40px);
+  font-size: clamp(13px, 1.8vw, 15px);
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
@@ -168,7 +165,7 @@
   background: #1a1a1a;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 @media (max-width: 1200px) {
   .layout {
     grid-template-columns: 1fr 1fr;
@@ -177,94 +174,59 @@
   .summary {
     grid-column: span 2;
   }
-
-  .inputLarge,
-  .inputMedium,
-  .inputSmall,
-  .row {
-    max-width: 100%;
-  }
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
     padding: 24px;
   }
 
+  /* ❌ DO NOT STACK STEPS */
   .steps {
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    font-size: 18px;
-    padding: 0;
+    padding: 12px;
+    text-align: center;
   }
 
   .stepLine {
     display: none;
   }
 
-  .summaryRow {
-    font-size: 16px;
-    gap: 12px;
-  }
-
-  .summaryRowTotal {
-    font-size: 18px;
-    gap: 12px;
+  .row {
+    flex-direction: column;
   }
 }
 
-/* ================= VERY SMALL SCREENS (360px) ================= */
-@media (max-width: 480px) {
+/* ================= ULTRA SMALL DEVICES ================= */
+@media (max-width: 360px), (max-height: 600px) {
   .layout {
-    grid-template-columns: 1fr;
-    padding: 16px;
-    gap: 16px;
-  }
-
-  .steps {
-    font-size: 16px;
-    gap: 8px;
-  }
-
-  .stepLine {
-    display: none;
-  }
-
-  /* Inputs scale full width */
-  .input,
-  .inputLarge,
-  .inputMedium,
-  .inputSmall {
-    max-width: 100%;
-    width: 100%;
-    font-size: 14px;
-    height: 48px;
-  }
-
-  /* Row container stacks */
-  .row {
-    flex-direction: column;
-    max-width: 100%;
+    padding: 12px;
     gap: 12px;
   }
 
-  /* Headings smaller */
-  .heading {
-    font-size: 18px;
+  .steps {
+    font-size: 13px;   /* ⬆ slightly larger but still safe */
+    gap: 6px;
+    letter-spacing: 0.3px; /* improves readability */
   }
 
-  /* Summary rows smaller */
+  .heading {
+    font-size: 16px;
+  }
+
+  .input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
   .summaryRow,
   .summaryRowTotal {
-    font-size: 16px;
-    gap: 10px;
+    font-size: 14px;
   }
 
   .payBtn {
-    height: 50px;
-    font-size: 14px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 }
-

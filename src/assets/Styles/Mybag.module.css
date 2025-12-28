@@ -190,17 +190,22 @@
     grid-template-columns: 70px 1fr auto;
     column-gap: 20px;
     row-gap: 8px;
-    padding: 20px 25px;
+    padding: 26px 30px;
     border-bottom: 1px solid #e0e0e0;
     align-items: center;
 }
 
 .bagItem img {
-    width: 65px;
+    width: 80px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
 }
+
+.bagItem:last-child {
+    border-bottom: none;
+}
+
 
 /* =====================
    PRODUCT INFO
@@ -390,6 +395,20 @@
     box-sizing: border-box;
 }
 
+.bagdetail p {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+.weight {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+
+
 /* =====================
    RESPONSIVE
 ===================== */
@@ -487,7 +506,7 @@
     }
 
     .bagItem img {
-        width: 50px;
+        width: 60px;
     }
 
     .qty,
@@ -496,6 +515,131 @@
         font-size: 16px;
     }
 }
+
+@media (max-width: 360px) {
+    .page {
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+
+    /* Step indicator */
+    .gerny {
+        font-size: 14px;
+        gap: 6px;
+        padding: 0;
+    }
+
+    /* Bag item layout */
+    .bagItem {
+        padding: 18px 16px;
+        column-gap: 12px;
+    }
+
+    .bagItem img {
+        width: 54px;
+    }
+
+    .bagdetail p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .remove {
+        font-size: 13px;
+    }
+
+    /* Qty & price */
+    .qty {
+        gap: 10px;
+    }
+
+    .qty button {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    /* Subtotal */
+    .subtotalRow {
+        padding: 18px 16px;
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    /* Back button */
+    .backBtn button {
+        font-size: 16px;
+        padding: 10px 18px;
+        width: 100%;
+    }
+
+    /* Order summary card */
+    .summary {
+        padding: 18px;
+        min-height: auto;
+    }
+
+    .summary h3 {
+        font-size: 20px;
+    }
+
+    .summaryRow {
+        font-size: 16px;
+    }
+
+    .summaryTotal {
+        font-size: 18px;
+    }
+
+    .checkoutBtn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Payment card */
+    .paymentOptions {
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .paymentOptions select {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* EXTRA SMALL HEIGHT DEVICES */
+@media (max-height: 600px) {
+    .bagItem img {
+        max-height: 60px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .bagdetail p {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    .weight {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 17px;
+    }
+
+    .qty span {
+        font-size: 15px;
+    }
+}
+
+
 
 
 

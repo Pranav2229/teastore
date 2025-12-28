@@ -52,42 +52,42 @@
 
 
 /* --- Section Wrapper --- */
-.collection {
+/* .collection {
   width: 100%;
   text-align: center;
   padding: 5rem 2rem;
   background: #ffffff;
-}
+} */
 
 /* Title */
-.title {
+/* .title {
   font-size: 2.8rem;
   font-weight: 600;
   color: #6c4f3d;
   margin-bottom: 3rem;
-}
+} */
 
 /* --- Grid Layout (Same as Figma 4-column) --- */
-.teaGrid {
+/* .teaGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
-}
+} */
 
 /* --- Individual Card --- */
-.teaCard {
+/* .teaCard {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .teaCard:hover {
   transform: scale(1.05);
-}
+} */
 
 /* Image container – ensures all images have same size */
-.imageWrapper {
+/* .imageWrapper {
   width: 100%;
   aspect-ratio: 1 / 1; 
   overflow: hidden;
@@ -99,9 +99,130 @@
   height: 100%;
   object-fit: cover; 
   display: block;
-}
+} */
 
 /* Item Title */
+/* .teaCard h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+} */
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet – 2 columns */
+/* @media (max-width: 992px) {
+  .teaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+} */
+
+/* Mobile – 1 column */
+/* @media (max-width: 600px) {
+  .teaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.collection {
+  width: 100%;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #6c4f3d;
+}
+
+/* ---------- NEW: Header Wrapper ---------- */
+.collectionHeader {
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ---------- NEW: Sort UI ---------- */
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sortLabel {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.sortSelect {
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ---------- Grid ---------- */
+.teaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- Card ---------- */
+.teaCard {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.teaCard:hover {
+  transform: scale(1.05);
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .teaCard h3 {
   margin-top: 1rem;
   font-size: 1.3rem;
@@ -109,9 +230,7 @@
   color: #333;
 }
 
-/* --- Responsive Breakpoints --- */
-
-/* Tablet – 2 columns */
+/* ---------- Tablet ---------- */
 @media (max-width: 992px) {
   .teaGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -122,8 +241,19 @@
   }
 }
 
-/* Mobile – 1 column */
+/* ---------- Mobile ---------- */
 @media (max-width: 600px) {
+  .collectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .sortSelect {
+    width: 100%;
+  }
+
   .teaGrid {
     grid-template-columns: 1fr;
   }
@@ -132,3 +262,17 @@
     font-size: 2rem;
   }
 }
+
+/* ---------- Very Small Screens (≤ 360×600) ---------- */
+@media (max-width: 360px) {
+  .sortLabel {
+    font-size: 0.85rem;
+  }
+
+  .sortSelect {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    width: 100%;
+  }
+}
+
