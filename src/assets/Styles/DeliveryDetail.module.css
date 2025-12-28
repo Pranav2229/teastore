@@ -5,6 +5,28 @@
   color: #1a1a1a;
 }
 
+/* TOTAL SECTION */
+.totalSection {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px; /* reduced spacing */
+}
+
+.totalFinal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
 /* ================= STEPS ================= */
 .steps {
   display: flex;
@@ -22,8 +44,14 @@
 }
 
 .active {
-  font-weight: 600;
+  font-weight: 100;
   color: #2b2b2b; /* highlight active step */
+}
+
+.disactive {
+  font-weight: 100;
+  font-size: 20px;
+  color: #cccccc !important
 }
 
 /* horizontal connecting lines */

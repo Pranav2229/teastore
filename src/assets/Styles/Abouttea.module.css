@@ -172,7 +172,7 @@
 .displayflx {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 25px; /* spacing between flavor boxes */
     margin-bottom: 20px; /* spacing below boxes */
 }
@@ -208,7 +208,7 @@
 }
 
 .beforetas p {
-    font-size: 20px; /* value text size */
+    font-size: 16px; /* value text size */
     font-weight: 400;
     margin: 0;
 }

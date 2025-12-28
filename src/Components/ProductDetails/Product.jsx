@@ -17,129 +17,56 @@ import { AboutTea } from './AboutTea/AboutTea';
 import { Footer } from '../Footer/Footer'
 import { Maylikethis } from './UMaylikeThis/Maylikethis';
 import { PopupProduct } from '../PopupScreens/PopupProduct';
-// export function Product(props) {
-//     const location = useLocation();
-//     const navigate = useNavigate();
-//     const product = location.state?.product; // Get product data
-//     const [OpenPopUp, setOpenPopUp] = useState(false)
-    
-//     // Redirect if no product data
-//     useEffect(() => {
-//         if (!product) {
-//             navigate("/"); // Redirect to homepage
 
-//         }
-//     }, [product, navigate]);
-
-   
-//     // if (!product) return null; // Prevent rendering
-//     return (
-//         <>
-//             <section>
-//                 <div className={productcss.align}>
-//                     <div className={productcss.navigate}>
-//                         HOME/COLLECTIONS/CHAI
-//                     </div>
-//                     <div className={productcss.mainexpand}>
-//                         <div className={productcss.mainimg}>
-//                             <img src={tea3} alt='tea-expand1' />
-//                         </div>
-//                         <div className={productcss.productdetails}>
-//                             <h1 className={productcss.head}>
-//                                 Ceylon Ginger Cinnamon
-//                                 chai tea
-//                             </h1>
-//                             <span className={productcss.padtop}>A lovely warming Chai tea with ginger cinnamon flavours.
-//                             </span>
-//                             <div className={`${productcss.padtop} ${productcss.spanalin}`}>
-//                                 <span>
-//                                     <div> <img src={langage} /></div>
-//                                     <div> organic:iron</div>
-//                                 </span>
-//                                 <span>
-//                                     <div> <img src={redeem} /></div>
-//                                     <div> organic</div>
-
-//                                 </span>
-//                                 <span>
-//                                     <div> <img src={eco} /></div>
-//                                     <div> vegan</div>
-
-//                                 </span>
-//                             </div>
-//                             <h1 className={productcss.padtop}>Rs. 3.90</h1>
-//                             <div>
-//                                 <span style={{ fontSize: '20px' }}>Variet</span>
-//                                 <div className={productcss.bags}>
-
-//                                     <div>
-//                                         <div><img src={fiveGbag} alt='onekg' /></div>
-//                                     </div>
-//                                     <div>
-//                                         <div><img src={hundredGbag} alt='onekg' /></div>
-//                                     </div>
-//                                     <div>
-//                                         <div><img src={oneseventyGbag} alt='onekg' /></div>
-//                                     </div>
-//                                     <div>
-//                                         <div><img src={twofiftyGbag} alt='onekg' /></div>
-//                                     </div>
-//                                     <div>
-//                                         <div><img src={onekgbag} alt='onekg' /></div>
-//                                     </div>
-//                                     <div>
-//                                         <div><img src={sampler} alt='onekg' /></div>
-//                                     </div>
-
-//                                 </div>
-//                             </div>
-//                             <div className={`${productcss.addbutton} ${productcss.padtop}`}>
-//                                 <div style={{ fontSize: '30px' }}><a style={{ padding: '0px 25px' }} >-</a>1<a style={{ padding: '0px 25px' }}>+</a></div>
-//                                 <div>
-//                                     <button onClick={() => setOpenPopUp(true)} >ADD TO BAG</button>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//             <AboutTea />
-//             <Maylikethis />
-//             <Footer />
-//             {OpenPopUp && (<PopupProduct setOpenPopUp={setOpenPopUp} OpenPopUp={OpenPopUp}/>)}
-//         </>
-//     )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import { useSelectedTea } from '../../ContextAPI/TeaContext';
 export function Product(props) {
     const location = useLocation()
+    const { selectedTea, setaddcard, addcard } = useSelectedTea();
     const navigate = useNavigate()
-    const product = location.state?.product
+    const product = selectedTea
     const [OpenPopUp, setOpenPopUp] = useState(false)
+    const mapimage = '/src/assets/Images/'
+    const [bagdata, setbagdata] = useState('50g bag')
+
+    // const HandleIncrementDecrement = (check) => {
+    //     if (check == 'incre') {
+    //         setvalue(value + 1)
+    //     } else {
+    //         if (value != 1) {
+    //             setvalue(value - 1)
+    //         } else {
+    //             return;
+    //         }
+    //     }
+
+    // }
+
+    const Handlesetdata = (selectedTea) => {
+        const isAlreadyInCart = addcard.some(
+            item => item.id === selectedTea.id
+        );
+
+        if (isAlreadyInCart) {
+            alert('This tea allready in card list')
+            return;
+        }
+
+        setaddcard(prev => [...prev, selectedTea]);
+    };
+
 
     useEffect(() => {
+        window.scroll(0, 0)
         if (!product) {
             navigate('/')
         }
     }, [product, navigate])
+
+    useEffect(() => {
+        if (addcard.length == 0) {
+            setOpenPopUp(false)
+        }
+    })
 
     return (
         <>
@@ -152,7 +79,7 @@ export function Product(props) {
                     <div className={productcss.mainexpand}>
                         <div className={productcss.mainimg}>
                             {/* <img src={tea3} alt="tea-expand1" /> */}
-                            <img src={product.image} alt={product.title} />
+                            <img src={`${mapimage}${product?.image}`} alt={product?.name} />
 
                         </div>
 
@@ -163,65 +90,85 @@ export function Product(props) {
                                 chai tea
                             </h1> */}
                             <h1 className={productcss.head}>
-                                {product.title}
+                                {product?.name}
                             </h1>
 
                             <span className={productcss.padtop}>
-                                {product.subtitle}
+                                {product?.description}
                             </span>
-
-
-                            {/* <span className={productcss.padtop}>
-                                A lovely warming Chai tea with ginger cinnamon flavours.
-                            </span> */}
-                            <span className={productcss.padtop}>
-                                {product.description}
-                            </span>
-
 
                             <div className={`${productcss.padtop} ${productcss.spanalin}`}>
                                 <span>
                                     <div><img src={langage} /></div>
                                     {/* <div>Origin: Iran</div> */}
-                                    <div>Origin: {product.origin}</div>
+                                    <div>Origin: {product?.origin}</div>
                                 </span>
                                 <span>
                                     <div><img src={redeem} /></div>
                                     {/* <div>Organic</div> */}
-                                    <div>{product.organic ? 'Organic' : 'Not Organic'}</div>
+                                    <div>{product?.organic == true ? 'Organic' : 'Not Organic'}</div>
                                 </span>
                                 <span>
                                     <div><img src={eco} /></div>
                                     {/* <div>Vegan</div> */}
-                                    <div>{product.vegan ? 'Vegan' : 'Non-Vegan'}</div>
+                                    <div>{product?.organic == true ? 'Vegan' : 'Non-Vegan'}</div>
                                 </span>
                             </div>
 
                             {/* <h1 className={productcss.padtop}>€3.90</h1> */}
-                            <h1 className={productcss.padtop}>{product.price}</h1>
+                            <h1 className={productcss.padtop}>{product?.price} Rs / {bagdata}</h1>
 
 
                             <div>
                                 <span style={{ fontSize: '20px' }}>Variants</span>
                                 <div className={productcss.bags}>
-                                    <div><div><img src={fiveGbag} /></div></div>
-                                    <div><div><img src={hundredGbag} /></div></div>
-                                    <div><div><img src={oneseventyGbag} /></div></div>
-                                    <div><div><img src={twofiftyGbag} /></div></div>
-                                    <div><div><img src={onekgbag} /></div></div>
-                                    <div><div><img src={sampler} /></div></div>
+                                    <div>
+                                        <div onClick={() => setbagdata('50g bag')}>
+                                            <img src={fiveGbag} style={{
+                                                background: bagdata === '50g bag' ? '#efefef' : '',
+                                                cursor: 'pointer',
+                                                borderRadius: 20
+                                            }}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div><div onClick={() => setbagdata('100g bag')}><img src={hundredGbag} style={{
+                                        background: bagdata === '100g bag' ? '#efefef' : '',
+                                        cursor: 'pointer',
+                                        borderRadius: 20
+                                    }} /></div></div>
+                                    <div><div onClick={() => setbagdata('170g bag')}><img src={oneseventyGbag} style={{
+                                        background: bagdata === '170g bag' ? '#efefef' : '',
+                                        cursor: 'pointer',
+                                        borderRadius: 20
+                                    }} /></div></div>
+                                    <div><div onClick={() => setbagdata('250g bag')}><img src={twofiftyGbag} style={{
+                                        background: bagdata === '250g bag' ? '#efefef' : '',
+                                        cursor: 'pointer',
+                                        borderRadius: 20
+                                    }} /></div></div>
+                                    <div><div onClick={() => setbagdata('1kg bag')}><img src={onekgbag} style={{
+                                        background: bagdata === '1kg bag' ? '#efefef' : '',
+                                        cursor: 'pointer',
+                                        borderRadius: 20
+                                    }} /></div></div>
+                                    <div><div onClick={() => setbagdata('Sampler bag')}><img src={sampler} style={{
+                                        background: bagdata === 'Sampler bag' ? '#efefef' : '',
+                                        cursor: 'pointer',
+                                        borderRadius: 20
+                                    }} /></div></div>
                                 </div>
                             </div>
 
                             <div className={`${productcss.addbutton} ${productcss.padtop}`}>
-                                <div style={{ fontSize: '30px' }}>
-                                    <a style={{ padding: '0px 25px' }}>-</a>
-                                    1
-                                    <a style={{ padding: '0px 25px' }}>+</a>
-                                </div>
+                                {/* <div style={{ fontSize: '30px' }}>
+                                    <a style={{ padding: '0px 25px', cursor: 'pointer' }} onClick={() => HandleIncrementDecrement(product, 'incre')}>-</a>
+                                    {product?.quantity}
+                                    <a style={{ padding: '0px 25px', cursor: 'pointer' }} onClick={() => HandleIncrementDecrement(product, 'decre')}>+</a>
+                                </div> */}
 
                                 <div>
-                                    <button onClick={() => setOpenPopUp(true)}>
+                                    <button onClick={() => { Handlesetdata(product); setOpenPopUp(true) }}>
                                         ADD TO BAG
                                     </button>
                                 </div>

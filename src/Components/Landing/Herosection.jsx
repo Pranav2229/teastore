@@ -19,7 +19,7 @@ export function Herosection(props) {
                             <h1>Every day is unique, just like our tea</h1>
                             <p>Lorem ipsum dolor sit amet consectetur. Orci nibh nullam risus adipiscing odio. Neque lacus nibh eros in.
                             Lorem ipsum dolor sit amet consectetur. Orci nibh nullam risus adipiscing odio. Neque lacus nibh eros in. Enjoy premium quality tea with rich flavors from around the world.</p>
-                            <a href="/shop" className="btn btn-primary">Shop Now</a>
+                            <a href="/teacollection" className="btn btn-primary">Shop Now</a>
                         </div>
 
                         
