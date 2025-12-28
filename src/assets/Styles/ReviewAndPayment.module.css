@@ -1,33 +1,42 @@
 .container {
   max-width: 1300px;
   margin: auto;
-  padding: 40px 20px;
+  padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 20px);
   font-family: Inter, sans-serif;
   box-sizing: border-box;
 }
+
+.steps span {
+  flex-shrink: 1;
+  min-width: 0;
+  text-align: center;
+}
+
 
 /* ================= STEPS ================= */
 .steps {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 40px;
-  font-size: 25px;
-  letter-spacing: 0.8px;
+  gap: clamp(6px, 2vw, 14px);
+  margin-bottom: clamp(20px, 5vw, 40px);
+  font-size: clamp(13px, 2.2vw, 25px);
+  letter-spacing: 0.5px;
   color: #999;
   width: 100%;
+  white-space: nowrap;
 }
 
 .active {
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .line {
-  width: 220px;
+  flex: 1;
   height: 2px;
   background: #ddd;
+  min-width: clamp(12px, 6vw, 220px);
 }
 
 .lineActive {
@@ -37,9 +46,8 @@
 /* ================= GRID ================= */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Equal width for all three sections */
-  column-gap: 20px;                   /* Equal spacing between sections */
-  row-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 3vw, 20px);
   box-sizing: border-box;
 }
 
@@ -47,36 +55,35 @@
 .left h3,
 .middle h3,
 .right h3 {
-  font-size: 23px;
+  font-size: clamp(16px, 2.4vw, 23px);
   font-weight: 500;
   color: #000;
-  margin-bottom: 16px;
-  text-align: left;
+  margin-bottom: clamp(10px, 3vw, 16px);
 }
 
 /* ================= LEFT ================= */
 .block {
-  margin-bottom: 14px;
+  margin-bottom: clamp(10px, 2vw, 14px);
 }
 
 .block h4 {
-  font-size: 17px;
+  font-size: clamp(14px, 2vw, 17px);
   font-weight: 500;
   margin-bottom: 6px;
 }
 
 .block p {
-  font-size: 17px;
+  font-size: clamp(14px, 2vw, 17px);
   color: #555;
   line-height: 1.5;
 }
 
 .editBtn {
-  margin-top: 12px;
+  margin-top: 10px;
   background: none;
   border: none;
   color: #f2c94c;
-  font-size: 16px;
+  font-size: clamp(13px, 2vw, 16px);
   font-weight: 500;
   cursor: pointer;
 }
@@ -84,8 +91,6 @@
 /* ================= MIDDLE ================= */
 .middle {
   width: 100%;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -93,21 +98,20 @@
 .cardBox,
 .advancedPayment {
   border: 1px solid #ddd;
-  width: auto;
   box-sizing: border-box;
-  margin-bottom: 30px;
-  margin-right: 90px;
+  margin-bottom: clamp(16px, 4vw, 30px);
+  margin-right: clamp(0px, 6vw, 90px);
 }
 
 .visaBox {
-  height: 52px;
+  min-height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .cardBox {
-  padding: 16px;
+  padding: clamp(12px, 3vw, 16px);
 }
 
 .cardHeader {
@@ -115,23 +119,23 @@
   justify-content: center;
   align-items: center;
   gap: 14px;
-  margin-bottom: 16px;
-  font-size: 19px;
+  margin-bottom: 14px;
+  font-size: clamp(14px, 2.2vw, 19px);
   font-weight: 500;
 }
 
 .cardHeader img {
-  height: 20px;
+  height: clamp(16px, 3vw, 20px);
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .inputGroup label {
-  font-size: 15px;
+  font-size: clamp(12px, 1.8vw, 15px);
   color: #777;
   margin-bottom: 4px;
 }
@@ -140,7 +144,7 @@
   border: none;
   border-bottom: 1px solid #ccc;
   padding: 6px 0;
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   outline: none;
 }
 
@@ -151,32 +155,29 @@
 }
 
 .advancedPayment {
-  height: 52px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   letter-spacing: 0.5px;
-  background: #fff;
   cursor: pointer;
-  margin-top: 12px;
 }
 
 /* ================= RIGHT ================= */
 .right {
   background: #f4f4f4;
-  padding: 26px;
-  min-height: 350px;
+  padding: clamp(16px, 4vw, 26px);
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .summaryRow {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: clamp(13px, 2vw, 16px);
 }
 
 .divider {
@@ -189,11 +190,11 @@
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  font-size: 18px;
+  font-size: clamp(15px, 2.4vw, 18px);
 }
 
 .shipping {
-  font-size: 15px;
+  font-size: clamp(12px, 2vw, 15px);
   color: #555;
   margin: 12px 0 20px;
 }
@@ -203,17 +204,16 @@
   background: #222;
   color: #fff;
   border: none;
-  padding: 14px;
-  font-size: 14px;
+  padding: clamp(12px, 3vw, 14px);
+  font-size: clamp(13px, 2vw, 14px);
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: 1fr; /* stacked sections for tablets */
-    column-gap: 0;
+    grid-template-columns: 1fr;
   }
 
   .line {
@@ -221,47 +221,36 @@
   }
 
   .steps {
-    flex-wrap: wrap;
     justify-content: center;
-  }
-}
-
-@media (max-width: 360px) {
-  .steps {
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 6px;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  .line {
-    width: 18px;
-    height: 2px;
-    display: block;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-  }
-
-  .middle,
-  .right,
-  .left {
-    width: 100%;
-    margin: 0;
-    padding: 0;
   }
 
   .visaBox,
   .cardBox,
   .advancedPayment {
     margin-right: 0;
-    margin-left: 0;
+  }
+}
+
+/* ================= ULTRA SMALL DEVICES ================= */
+@media (max-width: 360px), (max-height: 600px) {
+  .steps {
+    font-size: 14px;
+    gap: 6px;
   }
 
-  .payBtn {
-    margin-top: 12px;
+  .line {
+    display: block;
+    min-width: 14px;
   }
+
+  .container {
+    padding: 12px;
+  }
+
+  .right,
+  .middle,
+  .left {
+    padding: 0;
+  }
+  
 }
