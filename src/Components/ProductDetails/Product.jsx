@@ -117,6 +117,11 @@ export function Product(props) {
 
                             {/* <h1 className={productcss.padtop}>€3.90</h1> */}
                             <h1 className={productcss.padtop}>{product?.price} Rs / {bagdata}</h1>
+                            {/* <h1 className={productcss.padtop}>{product.price}</h1> */}
+                            <span className={`${productcss.padtop} ${productcss.price}`}>
+                                {product.price}
+                            </span>
+
 
 
                             <div>
@@ -166,6 +171,12 @@ export function Product(props) {
                                     {product?.quantity}
                                     <a style={{ padding: '0px 25px', cursor: 'pointer' }} onClick={() => HandleIncrementDecrement(product, 'decre')}>+</a>
                                 </div> */}
+                            <div className={`${productcss.addbutton} ${productcss.padtop}`}>                             
+                                <div className={productcss.quantity}>
+                                    <a>-</a>
+                                    <span>1</span>
+                                    <a>+</a>
+                                </div>
 
                                 <div>
                                     <button onClick={() => { Handlesetdata(product); setOpenPopUp(true) }}>

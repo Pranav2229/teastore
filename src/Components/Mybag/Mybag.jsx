@@ -9,6 +9,321 @@ import backgrd2 from '../../assets/Images/backgrd2.jpg'
 import styles from '../../assets/Styles/DeliveryDetail.module.css';
 
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
+//     const handleProductClick = (mybag) => {
+//         navigate("/product", { state: { mybag } }); // Pass product data
+//     };
+//     const handlecheckout = (deliverydetail) => {
+//         navigate("/deliverydetail", { state: { deliverydetail } }); // Pass product data
+//     }
+
+//     useEffect(() => {
+//         if (!product) {
+//             navigate("/"); // Redirect to homepage
+//         }
+//     }, [product, navigate]);
+
+
+//     return (
+//         <>
+//             <section>
+//                 <div className={mybag.gerny}>
+//                     <span>1. My Bag</span>
+//                     <a>_________________________________________________</a>
+//                     <span>2. Delivery</span>
+//                     <a>__________________________________________________</a>
+//                     <span>2. Review & Payment</span>
+//                 </div>
+//                 <div className='flex'>
+//                     <div className={mybag.mybagbody}>
+//                         <ul>
+//                             <li>
+//                                 <div>
+//                                     <img src={tea3} alt='bag' />
+//                                 </div>
+//                                 <div className={mybag.bagdetail}>
+//                                     <div><span>Ceylon Ginger Cinnamon
+//                                         chai tea - 50 g</span></div>
+//                                     <div className={mybag.martop}>
+//                                         Remove
+//                                     </div>
+
+//                                 </div>
+//                                 <div>
+//                                     <div>
+//                                         <a>-</a> 1 <a>+</a>
+//                                     </div>
+//                                     <div className={mybag.martop2}>
+//                                         €3.90
+//                                     </div>
+//                                 </div>
+//                             </li>
+//                             <li>
+//                                 <div>
+//                                     <img src={tea3} alt='bag' />
+//                                 </div>
+//                                 <div className={mybag.bagdetail}>
+//                                     <div><span>Ceylon Ginger Cinnamon
+//                                         chai tea - 50 g</span></div>
+//                                     <div className={mybag.martop}>
+//                                         Remove
+//                                     </div>
+
+//                                 </div>
+//                                 <div>
+//                                     <div>
+//                                         <a>-</a> 1 <a>+</a>
+//                                     </div>
+//                                     <div className={mybag.martop2}>
+//                                         €3.90
+//                                     </div>
+//                                 </div>
+//                             </li>
+//                             <li>
+//                                 <div>
+//                                     <img src={tea3} alt='bag' />
+//                                 </div>
+//                                 <div className={mybag.bagdetail}>
+//                                     <div><span>Ceylon Ginger Cinnamon
+//                                         chai tea - 50 g</span></div>
+//                                     <div className={mybag.martop}>
+//                                         Remove
+//                                     </div>
+
+//                                 </div>
+//                                 <div>
+//                                     <div>
+//                                         <a>-</a> 1 <a>+</a>
+//                                     </div>
+//                                     <div className={mybag.martop2}>
+//                                         €3.90
+//                                     </div>
+//                                 </div>
+//                             </li>
+//                             <li>
+//                                 <div>
+//                                     <img src={tea3} alt='bag' />
+//                                 </div>
+//                                 <div className={mybag.bagdetail}>
+//                                     <div><span>Ceylon Ginger Cinnamon
+//                                         chai tea - 50 g</span></div>
+//                                     <div className={mybag.martop}>
+//                                         Remove
+//                                     </div>
+
+//                                 </div>
+//                                 <div>
+//                                     <div>
+//                                         <a>-</a> 1 <a>+</a>
+//                                     </div>
+//                                     <div className={mybag.martop2}>
+//                                         €3.90
+//                                     </div>
+//                                 </div>
+//                             </li>
+//                         </ul>
+//                         <div>
+//                             <div className='totalcountfinal' style={{ justifyContent: 'end', borderTop: 0 }}>
+//                                 <div style={{ borderTop: '1px solid grey' }}>
+//                                     <a>Sub Total</a>
+//                                     <a style={{ marginLeft: '54px' }}>Rs 3.95</a>
+//                                 </div>
+//                             </div>
+//                             <div className='purchasbtn' style={{ textAlign: 'end' }}>
+//                                 <button onClick={() => handleProductClick({ id: 1 })}>
+//                                     Back To Shopping
+//                                 </button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div style={{ flex: 0.8 }}>
+//                         {/* style={{
+
+//                         }} */}
+//                         <div style={{
+//                             margin: '100px',
+//                             // backgroundColor: '#F4F4F4',
+//                             padding: '20px',
+//                              textAlign: 'left',
+//                             backgroundImage: `url(${backgrd2})`,
+//                             width: '100%',
+//                             // backgroundPosition: 'center',
+//                             backgroundRepeapxt: 'no-repeat',
+//                             // padding: '50px ',
+//                             color: 'white'
+//                         }}>
+//                             <p style={{ display: 'flex', justifyContent: 'center' , color: 'white' }}>Order Summery</p>
+//                             <div className='totalcount'>
+//                                 <a>Subtotal</a>
+//                                 <a>Rs 3.90</a>
+//                             </div>
+//                             <div className='totalcount'>
+//                                 <a>Delivery</a>
+//                                 <a>Rs 3.95</a>
+//                             </div>
+//                             <div className='totalcountfinal'>
+//                                 <a>Total</a>
+//                                 <a>Rs 3.95</a>
+//                             </div>
+//                             <div className='purchasbtn'>
+//                                 <button onClick={() => handlecheckout({ id: 1 })}>
+//                                     Check Out
+//                                 </button>
+//                             </div>
+//                         </div>
+
+//                     </div>
+//                 </div>
+//                 <Maylikethis />
+//                 <Footer />
+//             </section>
+//         </>
+//     )
+// }
+
+
+
+
+
+// export function Mybag() {
+//     const location = useLocation();
+//     const navigate = useNavigate();
+//     // const product = location.state?.mybag;
+//     const cartItems = location.state?.mybag || [];
+
+
+//     const handleProductClick = (mybag) => {
+//         navigate("/product", { state: { mybag } });
+//     };
+
+//     const handlecheckout = (deliverydetail) => {
+//         navigate("/deliverydetail", { state: { deliverydetail } });
+//     };
+
+//     useEffect(() => {
+//         if (!product) navigate("/");
+//     }, [product, navigate]);
+
+//     return (
+//         <section className={mybag.page}>
+//             {/* STEP INDICATOR */}
+//             <div className={mybag.gerny}>
+//                 <span>1. MY BAG</span>
+//                 <span className={mybag.line}></span>
+//                 <span>2. DELIVERY</span>
+//                 <span className={mybag.line}></span>
+//                 <span>3. REVIEW & PAYMENT</span>
+//             </div>
+
+//             {/* MAIN CONTENT */}
+//             <div className={mybag.layout}>
+//                 {/* LEFT – BAG ITEMS */}
+//                 <div className={mybag.mybagbody}>
+//                     <ul>
+//                         {[1, 2, 3].map((item) => (
+//                             <li key={item} className={mybag.bagItem}>
+//                                 <img src={tea3} alt="tea" />
+//                                 <div className={mybag.bagdetail}>
+//                                     <p>Ceylon Ginger Cinnamon<br />chai tea - 50 g</p>
+//                                     <button className={mybag.remove}>REMOVE</button>
+//                                 </div>
+//                                 <div className={mybag.qtyPrice}>
+//                                     <div className={mybag.qty}>
+//                                         <button>-</button>
+//                                         <span>1</span>
+//                                         <button>+</button>
+//                                     </div>
+//                                     <span className={mybag.price}>€3.90</span>
+//                                 </div>
+//                             </li>
+//                         ))}
+//                     </ul>
+
+//                     <div className={mybag.subtotalRow}>
+//                         <span>Subtotal</span>
+//                         <span>€3.90</span>
+//                     </div>
+
+//                     <div className={mybag.backBtn}>
+//                         <button onClick={() => handleProductClick({ id: 1 })}>
+//                             BACK TO SHOPPING
+//                         </button>
+//                     </div>
+//                 </div>
+
+//                 {/* RIGHT – ORDER SUMMARY */}
+//                 <div className={mybag.summaryWrapper}>
+//                     <div
+//                         className={mybag.summary}
+//                         style={{ backgroundImage: `url(${backgrd2})` }}
+//                     >
+//                         <h3>Order Summary</h3>
+//                         <div className={mybag.summaryRow}>
+//                             <span>Subtotal</span>
+//                             <span>€3.90</span>
+//                         </div>
+//                         <div className={mybag.summaryRow}>
+//                             <span>Delivery</span>
+//                             <span>€3.95</span>
+//                         </div>
+//                         <div className={mybag.summaryTotal}>
+//                             <span>Total</span>
+//                             <span>€7.85</span>
+//                         </div>
+//                         <button
+//                             className={mybag.checkoutBtn}
+//                             onClick={() => handlecheckout({ id: 1 })}
+//                         >
+//                             CHECK OUT
+//                         </button>
+//                     </div>
+
+//                     {/* BELOW ORDER SUMMARY – PAYMENT & DELIVERY/RETOUR */}
+//                     <div className={mybag.paymentOptions}>
+//                         <div>
+//                             <label>Payment Type:</label>
+//                             <select>
+//                                 <option>Credit/Debit Card</option>
+//                                 <option>PayPal</option>
+//                                 <option>Cash on Delivery</option>
+//                             </select>
+//                         </div>
+//                         <div>
+//                             <label>Delivery & Retour:</label>
+//                             <select>
+//                                 <option>Standard Delivery & 14-day Return</option>
+//                                 <option>Express Delivery & 30-day Return</option>
+//                             </select>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             <Maylikethis />
+//             <Footer />
+//         </section>
+//     );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect } from 'react';
+// import mybag from '../../assets/Styles/Mybag.module.css';
+// import { useNavigate, useLocation } from 'react-router-dom';
+// import { Header } from '../Header/Header';
+// import tea3 from '../../assets/Images/tea2.png';
+// import { Maylikethis } from '../ProductDetails/UMaylikeThis/Maylikethis';
+// import { Footer } from '../Footer/Footer';
+// import backgrd2 from '../../assets/Images/backgrd2.jpg';
 
 export function Mybag() {
     const navigate = useNavigate();

@@ -99,6 +99,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 .aboutteamain {
     background-color: #f7f7f7;
     display: flex;
@@ -226,7 +235,9 @@
     line-height: 1.5;
 }
 
-/* Responsive adjustments */
+/* ---------------- Responsive ---------------- */
+
+/* Tablets */
 @media (max-width: 1024px) {
     .aboutteamain {
         padding: 30px 20px;
@@ -236,8 +247,13 @@
     .alignitem {
         flex: 1 1 350px;
     }
+
+    .aboutteamain .alignitem .manageborder {
+        width: 100%;
+    }
 }
 
+/* Tablets / Mobile */
 @media (max-width: 768px) {
     .aboutteamain {
         flex-direction: column;
@@ -260,6 +276,7 @@
     }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
     .aboutteamain h2 {
         font-size: 26px;
@@ -286,4 +303,57 @@
         padding: 10px 5px;
     }
 }
+
+/* ⭐ Very Small Devices (≤ 360 × 600) */
+@media (max-width: 360px) {
+
+    .aboutteamain {
+        padding: 16px 12px;
+    }
+
+    .aboutteamain h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    /* FIX About This Tea boxes */
+    .displayflx {
+        flex-direction: column;   /* stack vertically */
+        align-items: center;
+        gap: 12px;
+    }
+
+    .beforetas {
+        min-width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .beforetas::after {
+        display: none; /* remove divider */
+    }
+
+    .beforetas span {
+        font-size: 15px;
+    }
+
+    .beforetas p {
+        font-size: 17px;
+    }
+
+    .aboutteamain .alignitem .manageborder {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .aboutteamain .alignitem .manageborder img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .aboutteamain a {
+        font-size: 15px;
+    }
+}
+
 

@@ -101,6 +101,22 @@
     margin: 0 52px;
 }
 
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    font-size: 22px;
+}
+
+.quantity a {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 20px;
+    color: #000;
+    font-weight: 500;
+}
+
 /* ---------------- BREADCRUMB ---------------- */
 
 .navigate {
@@ -209,6 +225,12 @@
     border-radius: 0;
 }
 
+.price {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+}
+
 /* ---------------- MAIN LAYOUT ---------------- */
 
 .mainexpand {
@@ -236,6 +258,7 @@
     font-weight: 100;
     line-height: 1.2;
 }
+
 
 /* ---------------- RESPONSIVE ---------------- */
 
@@ -281,6 +304,20 @@
         width: 100%;
         padding: 16px 0px;
     }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .quantity {
+        gap: 14px;
+        font-size: 18px;
+    }
+
+    .quantity a {
+        padding: 0 14px;
+        font-size: 18px;
+    }
 }
 
 /* Mobile */
@@ -300,5 +337,110 @@
 
     .bags img {
         width: 60px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .quantity {
+        gap: 12px;
+        font-size: 16px;
+    }
+
+    .quantity a {
+        padding: 0 10px;
+        font-size: 16px;
+    }
+}
+
+/* ================= VERY SMALL DEVICES (≤ 360 × 600) ================= */
+
+@media (max-width: 360px) {
+
+    /* Page margins */
+    .align {
+        margin: 0 12px;
+    }
+
+    /* Breadcrumb */
+    .navigate {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Main layout */
+    .mainexpand {
+        gap: 20px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    /* Heading */
+    .productdetails .head {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    /* Subtitle */
+    .productdetails > span.padtop {
+        font-size: 14px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Origin / Organic / Vegan */
+    .spanalin {
+        gap: 16px;
+        justify-content: center;
+        padding-bottom: 12px;
+    }
+
+    .spanalin span {
+        font-size: 14px;
+        gap: 6px;
+        white-space: normal;
+    }
+
+    /* Main image */
+    .mainimg img {
+        max-width: 100%;
+    }
+
+    /* Bags icons */
+    .bags {
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .bags img {
+        width: 52px;
+    }
+
+    /* Add to bag section */
+    .addbutton {
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .addbutton button {
+        font-size: 13px;
+        padding: 14px 0px;
+        width: 100%;
+    }
+
+    .quantity {
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .quantity a {
+        padding: 0 6px;
+        font-size: 14px;
     }
 }
