@@ -1,3 +1,14 @@
+.inputError {
+  border: 1px solid #e53935;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
 .page {
   width: 100%;
   background: #fff;
@@ -17,7 +28,8 @@
 .totalRow {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px; /* reduced spacing */
+  margin-bottom: 8px;
+  /* reduced spacing */
 }
 
 .totalFinal {
@@ -39,7 +51,8 @@
   font-weight: 500;
   margin-bottom: clamp(16px, 5vw, 40px);
 
-  white-space: nowrap;   /* 🔥 FORCE SINGLE LINE */
+  white-space: nowrap;
+  /* 🔥 FORCE SINGLE LINE */
   overflow: hidden;
 }
 
@@ -52,7 +65,8 @@
 
 .active {
   font-weight: 100;
-  color: #2b2b2b; /* highlight active step */
+  color: #2b2b2b;
+  /* highlight active step */
 }
 
 .disactive {
@@ -62,7 +76,7 @@
 }
 
 /* horizontal connecting lines */
-  /* font-weight: 600;
+/* font-weight: 600;
   color: #2b2b2b;
 } */
 
@@ -232,16 +246,19 @@
 }
 
 /* ================= ULTRA SMALL DEVICES ================= */
-@media (max-width: 360px), (max-height: 600px) {
+@media (max-width: 360px),
+(max-height: 600px) {
   .layout {
     padding: 12px;
     gap: 12px;
   }
 
   .steps {
-    font-size: 13px;   /* ⬆ slightly larger but still safe */
+    font-size: 13px;
+    /* ⬆ slightly larger but still safe */
     gap: 6px;
-    letter-spacing: 0.3px; /* improves readability */
+    letter-spacing: 0.3px;
+    /* improves readability */
   }
 
   .heading {

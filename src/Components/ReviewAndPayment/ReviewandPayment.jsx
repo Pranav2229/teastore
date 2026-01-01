@@ -9,10 +9,13 @@ import Path from '../../assets/Images/Path.png';
 import Group30 from '../../assets/Images/Group 30.png';
 import { Footer } from '../Footer/Footer';
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
-
+import { useUserDetail } from '../../ContextAPI/UserContext';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../FireBaseConnection/FireBase';
 function ReviewAndPayment() {
   const navigate = useNavigate();
-  const { addcard, HandleIncrementDecrement, setaddcard } = useSelectedTea()
+  const { addcard, setaddcard, setSelectedTea } = useSelectedTea()
+  const { UserDetail, setOrderID } = useUserDetail()
 
   const AdditionPrice = () => {
     return addcard
@@ -20,8 +23,20 @@ function ReviewAndPayment() {
     // .toFixed(2);
   };
 
-  const HandlePay = () => {
-    // setaddcard([])
+  const HandlePay = async () => {
+    const orderData = {
+      Userdeatil: UserDetail,
+      items: addcard,           // cart items
+      totalAmount: AdditionPrice() + 10,
+      paymentMethod: "card",
+      orderStatus: "pending",
+      createdAt: new Date()
+    }
+
+    const docref = await addDoc(collection(db, "orders"), orderData)
+    setOrderID(docref.id)
+    setaddcard([])
+    setSelectedTea([])
     navigate('/payment_succesful')
   }
   useEffect(() => {
@@ -56,24 +71,24 @@ function ReviewAndPayment() {
             <div className={styles.block}>
               <h4>Shipping address</h4>
               <p>
-                3 Falahi St, Falahi Ave,<br />
-                Pasdaran Blvd, Fars Province,<br />
-                Shiraz 71856-95159<br />
-                Iran
+                {UserDetail?.street}<br />
+                {UserDetail?.postcode}<br />
+                {UserDetail?.city}, {UserDetail?.country}<br />
+
               </p>
             </div>
 
             <div className={styles.block}>
               <h4>Billing address</h4>
-              <p>Same as shipping address</p>
+              <p>{UserDetail?.billingStreet == "" ? 'Same as shipping address' : UserDetail?.billingStreet}</p>
             </div>
 
             <div className={styles.block}>
               <h4>Contact information</h4>
-              <p>amoopur@gmail.com</p>
+              <p>{UserDetail?.email}</p>
             </div>
 
-            <button className={styles.editBtn}>EDIT DETAILS</button>
+            <button className={styles.editBtn} onClick={() => navigate('/deliverydetail')}>EDIT DETAILS</button>
           </div>
 
           {/* ================= MIDDLE COLUMN ================= */}

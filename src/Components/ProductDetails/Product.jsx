@@ -172,11 +172,11 @@ export function Product(props) {
                                     <a style={{ padding: '0px 25px', cursor: 'pointer' }} onClick={() => HandleIncrementDecrement(product, 'decre')}>+</a>
                                 </div> */}
                                 <div className={`${productcss.addbutton} ${productcss.padtop}`}>
-                                    <div className={productcss.quantity}>
+                                    {/* <div className={productcss.quantity}>
                                         <a>-</a>
                                         <span>1</span>
                                         <a>+</a>
-                                    </div>
+                                    </div> */}
 
                                     <div>
                                         <button onClick={() => { Handlesetdata(product); setOpenPopUp(true) }}>

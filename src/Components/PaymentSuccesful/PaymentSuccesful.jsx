@@ -1,14 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../assets/Styles/PaymentSuccesful.module.css';
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
 import { useNavigate } from "react-router-dom";
 import { Maylikethis } from "../ProductDetails/UMaylikeThis/Maylikethis";
 import { Footer } from "../Footer/Footer";
 import backimg from '../../assets/Images/123.jpg';
+import { useUserDetail } from '../../ContextAPI/UserContext';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../../FireBaseConnection/FireBase';
 
 function PaymentSuccesful() {
   const navigate = useNavigate();
-  const { addcard, HandleIncrementDecrement } = useSelectedTea()
+  const { addcard } = useSelectedTea()
+  const { OrderID } = useUserDetail()
+  const [Fetchdata, setFetchdata] = useState('')
+  console.log("Fetchdata", Fetchdata);
+
   const mapimage = '/src/assets/Images/'
   const AdditionPrice = () => {
     return addcard
@@ -17,8 +24,27 @@ function PaymentSuccesful() {
   };
 
   useEffect(() => {
-    window.scroll(0, 0)
-  })
+    window.scroll(0, 0);
+
+    const fetchOrder = async () => {
+      if (!OrderID) return;
+
+      try {
+        const snap = await getDoc(doc(db, "orders", OrderID));
+
+        if (snap.exists()) {
+          setFetchdata(snap.data());
+        } else {
+          console.log("❌ Document not found");
+        }
+      } catch (error) {
+        console.error("❌ Error fetching order:", error);
+      }
+    };
+
+    fetchOrder();
+  }, [OrderID]);
+
   return (
     <>
       {/* HERO */}
@@ -31,7 +57,7 @@ function PaymentSuccesful() {
             <h1>THANK YOU!</h1>
             <p>We received your order and will start preparing your package right away.</p>
             <p>You will receive a confirmation email in a moment.</p>
-            <h4>ORDER DETAILS - 8972491047359</h4>
+            <h4>ORDER ID - {OrderID}</h4>
           </div>
         </div>
       </section>
@@ -46,7 +72,7 @@ function PaymentSuccesful() {
             <h3 style={{ fontSize: 30, marginBottom: 10 }}>Order List</h3>
             <div className={styles.productsWrapper}>
               <div className={styles.products}>
-                {addcard.map((item, index) => (
+                {Fetchdata?.items?.map((item, index) => (
                   <div key={index} className={styles.productItem}>
                     <img src={`${mapimage}${item.image}`} alt="product" />
                     <div className={styles.productInfo}>
@@ -80,17 +106,17 @@ function PaymentSuccesful() {
             <h3>Delivery Details</h3>
             <h5>Shipping address</h5>
             <p>
-              3 Falahi St, Falahi Ave,<br />
-              Pasdaran Blvd, Fars Province,<br />
-              Shiraz 71856-95159<br />
-              Iran
+              {Fetchdata?.Userdeatil?.street}<br />
+              {Fetchdata?.Userdeatil?.postcode}<br />
+              {Fetchdata?.Userdeatil?.city}, {Fetchdata?.Userdeatil?.country}<br />
+
             </p>
 
             <h5>Billing address</h5>
-            <p>Same as shipping address</p>
+            <p>{Fetchdata?.Userdeatil?.billingStreet == "" ? 'Same as shipping address' : Fetchdata?.Userdeatil?.billingStreet}</p>
 
             <h5>Contact information</h5>
-            <p>amoopur@gmail.com</p>
+            <p>{Fetchdata?.Userdeatil?.email}</p>
           </div>
 
           {/* RIGHT */}
@@ -112,7 +138,7 @@ function PaymentSuccesful() {
         </div>
       </section>
 
-      <Maylikethis />
+      {/* <Maylikethis /> */}
       <Footer />
     </>
   );
