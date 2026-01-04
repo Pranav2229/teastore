@@ -23,7 +23,11 @@ function ReviewAndPayment() {
       .reduce((total, item) => total + item.price * item.quantity, 0)
     // .toFixed(2);
   };
-  const totalAmount = AdditionPrice() + 10;
+  const subtotal = AdditionPrice();
+  const deliveryCharge = 10;
+
+  const totalAmountRupees = subtotal + deliveryCharge; // 36
+  const totalAmountPaise = totalAmountRupees * 100;    // 3600
 
   const HandlePay = async () => {
     if (!window.Razorpay) {
@@ -33,7 +37,7 @@ function ReviewAndPayment() {
 
     const options = {
       key: import.meta.env.VITE_RAZORPAY_KEY,
-      amount: totalAmount, // rupees → paise
+      amount: totalAmountPaise, // rupees → paise
       currency: "INR",
       name: "Tea Store",
       description: "Premium Tea Purchase",
@@ -46,7 +50,7 @@ function ReviewAndPayment() {
             paymentId: response.razorpay_payment_id,
             orderId: response.razorpay_order_id || null,
             signature: response.razorpay_signature || null,
-            amount: totalAmount,
+            amount: totalAmountRupees,
             addcard,
             UserDetail,
             status: "PAID",

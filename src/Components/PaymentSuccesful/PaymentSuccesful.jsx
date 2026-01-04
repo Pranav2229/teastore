@@ -23,6 +23,7 @@ function PaymentSuccesful() {
   const { addcard } = useSelectedTea()
   const { OrderID } = useUserDetail()
   const [Fetchdata, setFetchdata] = useState('')
+console.log("Fetchdata",Fetchdata);
 
   const imageMap = {
     "tea1.png": tea1,
@@ -34,15 +35,13 @@ function PaymentSuccesful() {
     "tea7.png": tea7,
     "tea8.png": tea8,
   };
-  const AdditionPrice = () => {
-    return addcard
-      .reduce((total, item) => total + item.price * item.quantity, 0)
-    // .toFixed(2);
-  };
+  // const AdditionPrice = () => {
+  //   return addcard
+  //     .reduce((total, item) => total + item.price * item.quantity, 0)
+  //   // .toFixed(2);
+  // };
 
-  const generateReceipt = (order) => {
-    console.log("order",order);
-    
+  const generateReceipt = (order) => {    
     const doc = new jsPDF();
 
     doc.setFontSize(18);
@@ -145,7 +144,7 @@ function PaymentSuccesful() {
               </div>
               <div className={styles.total}>
                 <span>Total</span>
-                <span>{Fetchdata?.amount} Rs</span>
+                <span>{(Fetchdata?.amount)?.toFixed(2)} Rs</span>
               </div>
             </div>
           </div>
