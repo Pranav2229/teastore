@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import productcss from '../../assets/Styles/Product.module.css'
 import { useLocation, useNavigate } from 'react-router-dom';
-import tea3 from '../../assets/Images/tea3.png'
 import langage from '../../assets/Images/icons/language.png'
 import eco from '../../assets/Images/icons/eco.png'
 import onekg from '../../assets/Images/1kggbag.png'
@@ -19,15 +18,32 @@ import { Maylikethis } from './UMaylikeThis/Maylikethis';
 import { PopupProduct } from '../PopupScreens/PopupProduct';
 
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
+
+import tea1 from '../../assets/Images/tea1.png'
+import tea2 from '../../assets/Images/tea2.png'
+import tea3 from '../../assets/Images/tea3.png'
+import tea4 from '../../assets/Images/tea4.png'
+import tea5 from '../../assets/Images/tea5.png'
+import tea6 from '../../assets/Images/tea6.png'
+import tea7 from '../../assets/Images/tea7.png'
+import tea8 from '../../assets/Images/tea8.png'
 export function Product(props) {
     const location = useLocation()
     const { selectedTea, setaddcard, addcard } = useSelectedTea();
     const navigate = useNavigate()
     const product = selectedTea
     const [OpenPopUp, setOpenPopUp] = useState(false)
-    const mapimage = '/src/assets/Images/'
     const [bagdata, setbagdata] = useState('50g bag')
-
+    const imageMap = {
+        "tea1.png": tea1,
+        "tea2.png": tea2,
+        "tea3.png": tea3,
+        "tea4.png": tea4,
+        "tea5.png": tea5,
+        "tea6.png": tea6,
+        "tea7.png": tea7,
+        "tea8.png": tea8,
+    };
     // const HandleIncrementDecrement = (check) => {
     //     if (check == 'incre') {
     //         setvalue(value + 1)
@@ -79,7 +95,7 @@ export function Product(props) {
                     <div className={productcss.mainexpand}>
                         <div className={productcss.mainimg}>
                             {/* <img src={tea3} alt="tea-expand1" /> */}
-                            <img src={`${mapimage}${product?.image}`} alt={product?.name} />
+                            <img src={imageMap[product?.image]} alt={product?.name} />
 
                         </div>
 

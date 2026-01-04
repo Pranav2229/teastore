@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../../assets/Styles/Header.module.css";
 
-import frame from "../../assets/Images/frame.png";
+// import frame from "../../assets/Images/frame.png";
+import logo from '../../assets/Images/logo.png'
 import mall from "../../assets/Images/icons/local_mall.png";
 import search from "../../assets/Images/icons/search.png";
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
@@ -25,7 +26,7 @@ export function Header() {
     <header className={styles.header}>
       {/* LEFT : LOGO (image already contains text) */}
       <div className={styles.logo} onClick={() => navigate("/")}>
-        <img src={frame} alt="Brand Logo" />
+        <img src={logo} alt="Brand Logo" />
       </div>
 
       {/* CENTER : NAVIGATION */}

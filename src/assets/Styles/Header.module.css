@@ -21,11 +21,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  flex-shrink: 0; /* 🔒 prevents logo squishing */
+  flex-shrink: 0;
+  /* 🔒 prevents logo squishing */
 }
 
 .logo img {
-  height: 56px;
+  height: 105px;
   width: auto;
   display: block;
 }
@@ -59,7 +60,8 @@
   display: flex;
   align-items: center;
   gap: 36px;
-  flex-shrink: 0; /* 🔒 prevents icon collapse */
+  flex-shrink: 0;
+  /* 🔒 prevents icon collapse */
 }
 
 .icons img {
@@ -95,7 +97,8 @@
 ========================= */
 @media (max-width: 1200px) {
   .nav {
-    gap: 48px; /* layout safety only */
+    gap: 48px;
+    /* layout safety only */
   }
 }
 
@@ -151,7 +154,7 @@
   .icons {
     display: none;
   }
-  
+
   .header {
     height: 72px;
   }

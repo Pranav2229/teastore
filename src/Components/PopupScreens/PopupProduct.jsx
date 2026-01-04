@@ -1,15 +1,28 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../../assets/Styles/Popup.css'
-import tea3 from '../../assets/Images/tea3.png'
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
+import tea1 from '../../assets/Images/tea1.png'
+import tea2 from '../../assets/Images/tea2.png'
+import tea3 from '../../assets/Images/tea3.png'
+import tea4 from '../../assets/Images/tea4.png'
+import tea5 from '../../assets/Images/tea5.png'
+import tea6 from '../../assets/Images/tea6.png'
+import tea7 from '../../assets/Images/tea7.png'
+import tea8 from '../../assets/Images/tea8.png'
 export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
     const { addcard, HandleIncrementDecrement, setaddcard } = useSelectedTea()
     const navigate = useNavigate();
-    const mapimage = '/src/assets/Images/'
-    // Define actual cart items here
-    console.log("addcard", addcard);
-
+    const imageMap = {
+        "tea1.png": tea1,
+        "tea2.png": tea2,
+        "tea3.png": tea3,
+        "tea4.png": tea4,
+        "tea5.png": tea5,
+        "tea6.png": tea6,
+        "tea7.png": tea7,
+        "tea8.png": tea8,
+    };
     const cartItems = [
         { id: 1, name: "Ceylon Ginger Cinnamon chai tea - 50 g", qty: 1, price: 3.9 },
         { id: 2, name: "Ceylon Ginger Lemon chai tea - 50 g", qty: 2, price: 4.5 },
@@ -46,7 +59,7 @@ export function PopupProduct({ setOpenPopUp, OpenPopUp }) {
                     <ul className="cart-list">
                         {addcard.map((item, index) => (
                             <li className="cart-item" key={index}>
-                                <img src={`${mapimage}${item.image}`} alt="product" />
+                                <img src={imageMap[item.image]} alt="product" />
 
                                 <div className="bagdetail">
                                     <p className="title">{item.name}</p>

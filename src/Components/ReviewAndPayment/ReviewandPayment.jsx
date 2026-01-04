@@ -10,8 +10,9 @@ import Group30 from '../../assets/Images/Group 30.png';
 import { Footer } from '../Footer/Footer';
 import { useSelectedTea } from '../../ContextAPI/TeaContext';
 import { useUserDetail } from '../../ContextAPI/UserContext';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../FireBaseConnection/FireBase';
+import teaimage from '../../assets/Images/teaimage.jpg'
 function ReviewAndPayment() {
   const navigate = useNavigate();
   const { addcard, setaddcard, setSelectedTea } = useSelectedTea()
@@ -22,22 +23,58 @@ function ReviewAndPayment() {
       .reduce((total, item) => total + item.price * item.quantity, 0)
     // .toFixed(2);
   };
+  const totalAmount = AdditionPrice() + 10;
 
   const HandlePay = async () => {
-    const orderData = {
-      Userdeatil: UserDetail,
-      items: addcard,           // cart items
-      totalAmount: AdditionPrice() + 10,
-      paymentMethod: "card",
-      orderStatus: "pending",
-      createdAt: new Date()
+    if (!window.Razorpay) {
+      alert("Razorpay SDK failed to load");
+      return;
     }
 
-    const docref = await addDoc(collection(db, "orders"), orderData)
-    setOrderID(docref.id)
-    setaddcard([])
-    setSelectedTea([])
-    navigate('/payment_succesful')
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY,
+      amount: totalAmount, // rupees → paise
+      currency: "INR",
+      name: "Tea Store",
+      description: "Premium Tea Purchase",
+      image: teaimage,
+
+      handler: async function (response) {
+        // 🔥 Save order in Firestore
+        try {
+          const docref = await addDoc(collection(db, "orders"), {
+            paymentId: response.razorpay_payment_id,
+            orderId: response.razorpay_order_id || null,
+            signature: response.razorpay_signature || null,
+            amount: totalAmount,
+            addcard,
+            UserDetail,
+            status: "PAID",
+            createdAt: serverTimestamp()
+          });
+          setOrderID(docref.id)
+          setaddcard([])
+          setSelectedTea([])
+          navigate('/payment_succesful')
+          alert("Payment Successful!");
+        } catch (error) {
+          console.log("error", error);
+        }
+
+      },
+
+      prefill: {
+        name: `${UserDetail.firstName} ${UserDetail.lastName}`,
+        email: UserDetail.email
+      },
+
+      theme: {
+        color: "#2f855a"
+      }
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   }
   useEffect(() => {
     window.scroll(0, 0)
@@ -92,15 +129,13 @@ function ReviewAndPayment() {
           </div>
 
           {/* ================= MIDDLE COLUMN ================= */}
-          <div className={styles.middle}>
+          {/* <div className={styles.middle}>
             <h3>Payment type</h3>
 
-            {/* VISA */}
             <div className={styles.visaBox}>
               <img src={visa} alt="Visa" />
             </div>
 
-            {/* CREDIT / DEBIT */}
             <div className={styles.cardBox}>
               <div className={styles.cardHeader}>
                 <span>Credit or Debit card</span>
@@ -127,11 +162,10 @@ function ReviewAndPayment() {
               </div>
             </div>
 
-            {/* ADVANCED PAYMENT */}
             <div className={styles.advancedPayment}>
               ADVANCED PAYMENT
             </div>
-          </div>
+          </div> */}
 
           {/* ================= RIGHT COLUMN ================= */}
           <div>

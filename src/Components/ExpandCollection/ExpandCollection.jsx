@@ -6,6 +6,14 @@ import expandcss from '../../assets/Styles/Expandcollection.module.css'
 import products from '../../data/products'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../FireBaseConnection/FireBase'
+import tea1 from '../../assets/Images/tea1.png'
+import tea2 from '../../assets/Images/tea2.png'
+import tea3 from '../../assets/Images/tea3.png'
+import tea4 from '../../assets/Images/tea4.png'
+import tea5 from '../../assets/Images/tea5.png'
+import tea6 from '../../assets/Images/tea6.png'
+import tea7 from '../../assets/Images/tea7.png'
+import tea8 from '../../assets/Images/tea8.png'
 
 // context api 
 
@@ -14,7 +22,6 @@ import { useSelectedTea } from '../../ContextAPI/TeaContext'
 export function ExpandCollection() {
   const navigate = useNavigate()
   const { setSelectedTea } = useSelectedTea();
-  const mapimage = '/src/assets/Images/'
   const [sortValue, setSortValue] = useState('default')
   const [filters, setFilters] = useState({ organicOnly: false })
   const [expandedFilters, setExpandedFilters] = useState({}) // For accordion
@@ -142,6 +149,18 @@ export function ExpandCollection() {
 
     return 0; // default
   });
+
+
+  const imageMap = {
+    "tea1.png": tea1,
+    "tea2.png": tea2,
+    "tea3.png": tea3,
+    "tea4.png": tea4,
+    "tea5.png": tea5,
+    "tea6.png": tea6,
+    "tea7.png": tea7,
+    "tea8.png": tea8,
+  };
 
   useEffect(() => {
     fetchTeaCollection()
@@ -355,7 +374,7 @@ export function ExpandCollection() {
                     >
                       <div className={expandcss.imgWrap}>
                         {/* <img src={product.img} alt={product.title} className={expandcss.productImg} /> */}
-                        <img src={`${mapimage}${product.image}`} alt={product.name} className={expandcss.productImg} />
+                        <img src={imageMap[product.image]} alt={product.name} className={expandcss.productImg} />
                       </div>
                       <div className={expandcss.pricedetail}>
                         <div className={expandcss.title}>{product.name}</div>
